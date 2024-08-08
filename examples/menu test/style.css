@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700,900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+.transition {
+  transition: ease-in-out 500ms;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* a:hover {
+  color: lightskyblue;
+} */
+
+/* === LISTA === */
+ol {
+  counter-reset: item;
+  padding: ;
+  width: 90%;
+  margin: 1em auto 0 auto;
+}
+.ol__padding {
+  padding: 0;
+}
+li {
+  display: block;
+  margin-bottom: 0.5em;
+}
+li:before {
+  content: counters(item, ".") " ";
+  counter-increment: item;
+}
+
+li:hover,
+a:hover {
+  color: lightskyblue;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid: auto / 300px 1fr;
+}
+
+aside {
+  background-color: #232323;
+  color: #fff;
+  text-transform: uppercase;
+  grid-column: 1;
+
+  transform: translateX(0);
+}
+
+aside nav {
+  background-color: red;
+}
+
+main {
+  grid-column: 2;
+  display: grid;
+  grid: 50px repeat(2, 100vh) / 1fr;
+}
+
+header {
+  position: relative;
+}
+
+.header--wrapper {
+  position: fixed;
+  width: 100%;
+  height: 50px;
+
+  border-bottom: 1px solid lightgray;
+  background-color: #fff;
+}
+
+.test {
+  display: none;
+}
+
+.label-toggle {
+  position: fixed;
+  left: 305px;
+  z-index: 99;
+  padding: 0.3em;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.label-toggle svg {
+  opacity: 0.6;
+}
+
+.test:checked ~ .label-toggle {
+  left: 10px;
+}
+
+.test:checked ~ .wrapper {
+  grid: auto / 0px 1fr;
+}
+
+.test:checked ~ .wrapper aside {
+  transform: translateX(-100%);
+  /* display: block; */
+  /* Funkar inte med animationen */
+
+  overflow: hidden;
+}
+
+section {
+  /* background-image: linear-gradient(black, white); */
+}

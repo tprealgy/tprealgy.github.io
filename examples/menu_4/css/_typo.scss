@@ -1,0 +1,77 @@
+@import "./vars";
+
+h1 {
+  font-size: 2.4em;
+}
+
+h2 {
+  font-size: 1.8em;
+  text-transform: uppercase;
+}
+
+h1,
+h2 {
+  font-family: map-get($font, heading);
+  font-weight: bold;
+}
+
+p {
+  max-width: 60ch;
+  line-height: 1.6;
+  color: map-get($colors, f-color);
+}
+
+a {
+  color: map-get($colors, link);
+  text-transform: uppercase;
+  text-decoration: none;
+
+  &:hover,
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+p,
+a,
+.main__tags {
+  font-family: map-get($font, body);
+}
+
+p,
+li,
+a {
+  font-size: 1.4rem;
+}
+
+.main {
+  a {
+    font-size: 1.6rem;
+  }
+  &__tags {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+  }
+
+  &__heading--2 {
+    margin: 0;
+  }
+
+  &__heading--2:not(:first-child) {
+    margin: 2.5em 0 0 0;
+  }
+  &__heading--3 {
+    color: map-get($colors, h3);
+    margin: 0;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .main {
+    p {
+      max-width: 80ch;
+      margin-bottom: 1em;
+    }
+  }
+}

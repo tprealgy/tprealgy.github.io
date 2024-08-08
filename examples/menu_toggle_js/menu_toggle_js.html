@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body">
+    <nav id="nav">
+        <h3>This is the nav content</h6>
+    </nav>
+    <main id="main">
+        <h3>This is the main content</h6>
+        <span id="click">Click me to show or hide nav</span>
+    </main>
+    <script>
+        var nav = document.getElementById("nav")
+        var main = document.getElementById("main")
+        var body = document.getElementById("body")
+        document.getElementById("click").addEventListener("click", move_nav);
+
+
+        function move_nav() {
+            if (main.style.left === "0vw") {
+                main.style.left = "20vw"
+                nav.style.left = "0vw"
+                body.style.overflow = "hidden"
+            } else {
+                main.style.left = "0vw"
+                nav.style.left = "-20vw"
+                body.style.overflow = "unset"
+            }
+
+        }
+    </script>
+</body>
+</html>

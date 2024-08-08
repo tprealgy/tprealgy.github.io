@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <img src="jungle-on-white-background-free-vector.jpg" alt="ph">
+        <div class="wrapper">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius nobis necessitatibus repudiandae debitis excepturi deleniti quisquam voluptatibus quos itaque sunt harum error natus eligendi ullam quia aut, odit veniam numquam?</p>
+            <a href="next.html">Next... </a>
+        </div>
+
+    </main>
+    
+
+    <script>
+        window.onload = function(){
+            setTimeout(loadAfterTime, 1000)
+            setTimeout(loadAfterTime2, 500)
+        };
+
+        function loadAfterTime2() { 
+            document.querySelector('main').style.opacity = "1"
+
+        }
+
+
+
+        function loadAfterTime() { 
+            document.querySelector('main').style.opacity = "1"
+            document.querySelector('img').style.width = "50vw"
+            document.querySelector('p').style.fontSize = "1.5em"
+
+            // document.querySelector('img').style.height = "25%"
+
+        }
+    </script>
+</body>
+</html>

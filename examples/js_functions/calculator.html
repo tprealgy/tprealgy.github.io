@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Functions - Calculator</title>
+  </head>
+  <body>
+    <script>
+      class Calculator {
+        // Define a starting value
+        constructor(start = 0) {
+          this.total = start;
+        }
+
+        // Add multiple numbers to the total
+        add(...nums) {
+          nums.forEach(function (num) {
+            this.total += num;
+          });
+
+          //   let instance = this;
+
+          //   nums.forEach(function (num) {
+          //     instance.total += num;
+          //   });
+
+          //   nums.forEach((num) => {
+          //     this.total += num;
+          //   });
+        }
+      }
+      let count = new constructor(42);
+      count.add(5);
+      console.log(count.total);
+    </script>
+  </body>
+</html>

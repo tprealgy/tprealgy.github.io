@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="favi.png" />
+
+    <title>Blueprint text</title>
+    <style>
+      :root {
+        --color-bg-dark: #232323;
+        --color-text-dark: #fff;
+        --color-bg-light: #fff;
+        --color-text-light: #232323;
+        --color-gradient-h-dark: linear-gradient(
+          45deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.5004202364539565) 15%,
+          rgba(255, 255, 255, 1) 50%,
+          rgba(255, 255, 255, 0.49761911600577735) 85%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        --color-gradient-h-light: linear-gradient(
+          35deg,
+          rgba(23, 23, 23, 0) 0%,
+          rgba(23, 23, 23, 0.5004202364539565) 15%,
+          rgba(23, 23, 23, 1) 50%,
+          rgba(23, 23, 23, 0.49761911600577735) 85%,
+          rgba(23, 23, 23, 0) 100%
+        );
+        --color-gradient-l-dark: linear-gradient(
+          0deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.5004202364539565) 15%,
+          rgba(255, 255, 255, 1) 50%,
+          rgba(255, 255, 255, 0.49761911600577735) 85%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        --color-gradient-l-light: linear-gradient(
+          0deg,
+          rgba(23, 23, 23, 0) 0%,
+          rgba(23, 23, 23, 0.5004202364539565) 15%,
+          rgba(23, 23, 23, 1) 50%,
+          rgba(23, 23, 23, 0.49761911600577735) 85%,
+          rgba(23, 23, 23, 0) 100%
+        );
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 5em;
+        background-color: var(--color-bg-dark);
+        color: var(--color-text-dark);
+      }
+      wrapper {
+        max-width: 50%;
+        display: grid;
+        grid: repeat(3, 1fr) / repeat(6, 1fr);
+      }
+
+      .box {
+        text-align: center;
+        padding: 2em 0;
+        transition: ease-in-out 150ms;
+      }
+      .box:hover {
+        background-color: #fff;
+        color: #232323;
+      }
+
+      .t1,
+      .e,
+      .s,
+      .t2 {
+        grid-row: 2;
+      }
+
+      .t1 {
+        grid-column: 2;
+      }
+      .e {
+        grid-column: 3;
+      }
+      .s {
+        grid-column: 4;
+      }
+      .t2 {
+        grid-column: 5;
+      }
+      .line-top,
+      .line-bot {
+        grid-column: 1 / -1;
+        background: var(--color-gradient-h-dark);
+        height: 1px;
+        transition: ease-in-out 500ms;
+        position: relative;
+      }
+      .line-top {
+        grid-row: 1;
+        left: -10em;
+
+        align-self: flex-end;
+      }
+      .line-bot {
+        grid-row: 3;
+        left: 10em;
+      }
+      .line-1,
+      .line-2,
+      .line-3,
+      .line-4,
+      .line-5 {
+        grid-row: 1 / -1;
+
+        background: var(--color-gradient-l-dark);
+        width: 1px;
+        justify-self: right;
+        position: relative;
+        transition: ease-in-out 500ms;
+      }
+
+      .line-1,
+      .line-3,
+      .line-5 {
+        top: -10em;
+      }
+      .line-2,
+      .line-4 {
+        top: 10em;
+      }
+
+      .line-1 {
+        grid-column: 1;
+      }
+      .line-2 {
+        grid-column: 2;
+      }
+      .line-3 {
+        grid-column: 3;
+      }
+      .line-4 {
+        grid-column: 4;
+      }
+      .line-5 {
+        grid-column: 5;
+      }
+
+      @media (prefers-color-scheme: light) {
+        body {
+          background: var(--color-bg-light);
+          color: var(--color-text-light);
+        }
+        .line-top,
+        .line-bot {
+          background: var(--color-gradient-h-light);
+        }
+        .line-1,
+        .line-2,
+        .line-3,
+        .line-4,
+        .line-5 {
+          background: var(--color-gradient-l-light);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <wrapper>
+      <div class="hline line-top"></div>
+      <div class="vline line-1"></div>
+      <div class="vline line-2"></div>
+      <div class="vline line-3"></div>
+      <div class="vline line-4"></div>
+      <div class="vline line-5"></div>
+      <div class="box t1">t</div>
+      <div class="box e">e</div>
+      <div class="box s">s</div>
+      <div class="box t2">t</div>
+      <div class="hline line-bot"></div>
+    </wrapper>
+
+    <script>
+      const allHLine = document.querySelectorAll(".hline");
+      const allVLine = document.querySelectorAll(".vline");
+
+      window.onload = () => {
+        setTimeout(() => {
+          allHLine.forEach((line) => {
+            line.style.left = "0";
+            line.style.height = "2px";
+          });
+          allVLine.forEach((line) => {
+            line.style.top = "0";
+            line.style.width = "2px";
+          });
+        }, 100);
+      };
+    </script>
+  </body>
+</html>

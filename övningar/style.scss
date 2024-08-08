@@ -1,0 +1,19 @@
+// $base-color: #c6538c;
+$base-color: #232323;
+
+.aside {
+  width: 20px;
+
+  background-color: $base-color;
+  position: fixed;
+  right: 0;
+  top: 10%;
+  bottom: 10%;
+
+  &--circle {
+    width: 50px;
+    aspect-ratio: 1;
+    background-color: #fff;
+    border-radius: 50%;
+  }
+}

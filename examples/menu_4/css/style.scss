@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css?family=Caladea:400,700|Roboto:400,700,900&display=swap");
+@import "./aside";
+@import "./main";
+@import "./typo";
+@import "./vars";
+@import "./mixins";
+
+* {
+  box-sizing: border-box;
+  // transition: ease-in-out 250ms;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  display: grid;
+  grid: auto / 50ch 1fr;
+  position: relative;
+}
+
+.bg {
+  position: absolute;
+  //   background-image: url(../img/bg.svg);
+  max-width: 100%;
+  max-height: 400px;
+  top: 0;
+  right: 0;
+  z-index: -5;
+
+  &__img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.up {
+  position: fixed;
+  right: 2%;
+  bottom: 3%;
+  width: 75px;
+  height: 75px;
+  object-fit: cover;
+  border-radius: 50%;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.test {
+  position: absolute;
+  // left: 300px;
+  z-index: 999;
+}
+
+.label {
+  color: red;
+  font-size: 25px;
+  z-index: 999;
+  left: 15ch;
+  top: .7em;
+  position: fixed;
+  font-family: map-get($font, body);
+  transition: ease-in-out 250ms;
+  cursor: pointer;
+
+  border: 2px solid red;
+  border-radius: 50%;
+  width: 34px;
+  @include flexCenter;
+
+  &:hover {
+    color: white;
+    border: 2px solid white;
+    background: red;
+  }
+}
+
+#checkbox {
+  display: none;
+  position: absolute;
+}
+
+#checkbox:checked ~ .label {
+  color: green;
+  left: 2ch;
+
+  border: 2px solid green;
+
+  &:hover {
+    background: green;
+    color: white;
+    border: 2px solid white;
+  }
+}
+
+#checkbox:checked ~ aside {
+  transform: translateX(-93%);
+  background-color: rgba($color: #000000, $alpha: 0.15);
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    grid: auto / 10px 1fr;
+  }
+}

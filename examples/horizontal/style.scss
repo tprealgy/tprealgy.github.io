@@ -1,0 +1,116 @@
+@import "reset", "font", "mediaquery", "utils";
+
+// .next {
+//   position: absolute;
+//   bottom: 10%;
+//   right: 10%;
+//   outline: 1px solid yellow;
+
+//   & span {
+//     background-color: #fff;
+//     padding: 1em;
+//     border-radius: 50vw;
+//     transform: translateY(1000%);
+//   }
+//   & .arrow {
+//     height: 50px;
+//     width: 50px;
+//     background-color: #fff;
+//     border-radius: 50%;
+
+//     & img {
+//       height: 100%;
+//     }
+//   }
+// }
+
+$maxWidth: 700px;
+
+main {
+  background-color: crimson;
+  height: 100%;
+  width: 300vw;
+  display: flex;
+}
+
+.section {
+  background-image: linear-gradient(45deg, #d9afd9 0%, #97d9e1 100%);
+  background-attachment: fixed;
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  justify-content: flex-end;
+
+  &__scroll {
+    height: 100%;
+    width: 7vw;
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.5)
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    z-index: 1;
+    &::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-image: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.5)
+      );
+      z-index: -1;
+      transition: opacity 0.5s linear;
+      opacity: 0;
+    }
+    &:hover::before {
+      opacity: 1;
+    }
+  }
+}
+
+#section2 {
+  background-color: #fbab7e;
+  background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
+}
+
+#section3 {
+  background-color: #fbda61;
+  background-image: linear-gradient(45deg, #fbda61 0%, #ff5acd 100%);
+}
+
+.article {
+  display: flex;
+  flex: 1 1 0;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+
+  &__text {
+    max-width: $maxWidth;
+  }
+  &__imgbox {
+    padding: 2em;
+    border: 2px solid;
+    margin-bottom: 2em;
+  }
+}
+
+.wrapper {
+  display: flex;
+  max-width: $maxWidth;
+
+  &__text {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blueprint JS</title>
+    <style>
+      :root {
+        --color-bg-dark: #232323;
+        --color-text-dark: #fff;
+        --color-bg-light: #fff;
+        --color-text-light: #232323;
+        --color-gradient-h-dark: linear-gradient(
+          45deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.5004202364539565) 15%,
+          rgba(255, 255, 255, 1) 50%,
+          rgba(255, 255, 255, 0.49761911600577735) 85%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        --color-gradient-h-light: linear-gradient(
+          35deg,
+          rgba(23, 23, 23, 0) 0%,
+          rgba(23, 23, 23, 0.5004202364539565) 15%,
+          rgba(23, 23, 23, 1) 50%,
+          rgba(23, 23, 23, 0.49761911600577735) 85%,
+          rgba(23, 23, 23, 0) 100%
+        );
+        --color-gradient-l-dark: linear-gradient(
+          0deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.5004202364539565) 15%,
+          rgba(255, 255, 255, 1) 50%,
+          rgba(255, 255, 255, 0.49761911600577735) 85%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        --color-gradient-l-light: linear-gradient(
+          0deg,
+          rgba(23, 23, 23, 0) 0%,
+          rgba(23, 23, 23, 0.5004202364539565) 15%,
+          rgba(23, 23, 23, 1) 50%,
+          rgba(23, 23, 23, 0.49761911600577735) 85%,
+          rgba(23, 23, 23, 0) 100%
+        );
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 5em;
+        background-color: var(--color-bg-dark);
+        color: var(--color-text-dark);
+      }
+      wrapper {
+        max-width: 50%;
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(6, 1fr);
+      }
+      .letter {
+        grid-row: 2;
+        text-align: center;
+        aspect-ratio: 1;
+        transition: ease-in-out 150ms;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .letter:hover {
+        background-color: #fff;
+        color: #232323;
+      }
+      .line-top,
+      .line-bot {
+        grid-column: 1 / -1;
+        background: var(--color-gradient-h-dark);
+        height: 1px;
+        transition: ease-in-out 500ms;
+        position: relative;
+      }
+      .line-top {
+        grid-row: 1;
+
+        align-self: flex-end;
+      }
+      .line-bot {
+        grid-row: 3;
+      }
+      .vline {
+        grid-row: 1 / -1;
+        background: var(--color-gradient-l-dark);
+        width: 1px;
+        justify-self: right;
+      }
+    </style>
+  </head>
+  <body>
+    <wrapper>
+      <div class="hline line-top"></div>
+
+      <div class="hline line-bot"></div>
+    </wrapper>
+
+    <script>
+      const area = document.querySelector("wrapper");
+      const word = "testhej";
+      // const word = prompt("Enter a word");
+      const input = "hello world";
+      const wordCount = word.length;
+
+      for (let i = 0; i < wordCount; i++) {
+        const letter = document.createElement("div");
+        area.style.gridTemplateColumns = `repeat(${wordCount + 2}, 1fr)`;
+        letter.classList.add("letter");
+        letter.classList.add(word[i]);
+        letter.innerHTML = word[i];
+        area.appendChild(letter);
+
+        const allLetters = document.querySelectorAll(".letter");
+        allLetters[i].style.gridColumn = i + 2;
+      }
+      for (let j = 0; j < wordCount + 1; j++) {
+        const vLine = document.createElement("div");
+        vLine.classList.add("vline", `line-${j + 1}`);
+        area.appendChild(vLine);
+
+        const allVLines = document.querySelectorAll(".vline");
+
+        allVLines[j].style.gridColumn = j + 1;
+      }
+    </script>
+  </body>
+</html>

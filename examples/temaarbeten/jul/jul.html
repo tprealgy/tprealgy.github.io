@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="santa">
+      <img class="santa__img" src="img/santa.png" alt="dancing santa" />
+    </div>
+
+    <header>
+      <h1 class="header__title">Santas Winter Wonderland</h1>
+    </header>
+    <main>
+      <section class="main__col main__col-l">
+        <h2 class="main__heading">Welcome!</h2>
+        <p class="main__desc">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et quam
+          tempus, pulvinar ante a, ornare mauris. Morbi aliquet bibendum sapien
+          quis tempor. Pellentesque a consequat nisi. Aenean auctor, arcu in
+          laoreet tempor, elit tortor laoreet dolor, lobortis vestibulum nisl
+          diam vel metus. Vivamus in dui dui. Aliquam mollis faucibus eros.
+          Suspendisse lacus augue, aliquet sit amet tortor quis, aliquet commodo
+          purus. Phasellus malesuada dui sit amet lobortis sollicitudin. Morbi
+          lacus tortor, molestie vel gravida quis, dignissim non magna. Quisque
+          vestibulum vel dolor pretium ultrices.
+        </p>
+        <div class="decoration">🎁🎁🎁</div>
+        <p class="main__desc">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et quam
+          tempus, pulvinar ante a, ornare mauris. Morbi aliquet bibendum sapien
+          quis tempor. Pellentesque a consequat nisi. Aenean auctor, arcu in
+          laoreet tempor, elit tortor laoreet dolor, lobortis vestibulum nisl
+          diam vel metus. Vivamus in dui dui. Aliquam mollis faucibus eros.
+          Suspendisse lacus augue, aliquet sit amet tortor quis, aliquet commodo
+          purus. Phasellus malesuada dui sit amet lobortis sollicitudin. Morbi
+          lacus tortor, molestie vel gravida quis, dignissim non magna. Quisque
+          vestibulum vel dolor pretium ultrices.
+        </p>
+        <h2 class="main__heading">Make your wish list</h2>
+        <!-- <input type="text" placeholder="Type something..." id="myInput" />
+        <button type="button" onclick="getInputValue();">
+          Add you your wish list...
+        </button>
+        <ul class="main__list" id="main__wishList"></ul> -->
+
+        <form>
+            <input id="filter" type="text" placeholder="Search item">
+          </form> 
+        </div>
+    </header>
+    <ul id="items">
+        <!-- <li class="element">Javascript<button class="trash delete">X</button> </li>
+        <li class="element">Angular <button class="trash delete">X</button> </li>
+        <li class="element">Vuejs<button class="trash delete">X</button> </li>
+        <li class="element">Html & Css<button class="trash delete">X</button> </li> -->
+    </ul>
+    <form action="#" id="addForm">
+        <input type="text" id="item" placeholder="Add" class="add">
+        <!-- <input type="submit" class="btn-dark" id="button1" value="+"> -->
+        <button type="submit" class="btn-dark" id="button1" >
+            <i class="material-icons">+</i>
+        </button>
+    </form>
+
+
+
+
+      </section>
+      <section class="main__col main__col-r">
+        <h3 class="main__heading">Opening hours</h3>
+        <ul class="main__list main__openHours">
+          <li class="list__item list__item--closed">22/12 - Closed</li>
+          <li class="list__item list__item--closed">23/12 - Closed</li>
+          <li class="list__item list__item--open">24/12 - Open</li>
+          <li class="list__item list__item--closed">25/12 - Closed</li>
+        </ul>
+        <h3 class="main__heading">Time left until open</h3>
+        <ul class="main__list">
+          <li class="list__item">
+            <span id="days"></span>
+            <span id="hours"></span>
+            <span id="mins"></span>
+            <span id="secs"></span>
+            <h2 id="end"></h2>
+          </li>
+        </ul>
+        <h3 class="main__heading main__find">Find us</h3>
+        <img src="img/map.png" alt="" />
+      </section>
+    </main>
+    <div class="breaker">
+        <img class="breaker__img" src="img/santa2.jpg" alt="">
+        <a href="#">
+            <div class="breaker__hover">
+                <h2 class="breaker__heading">SANTAS WORKSHOP</h2>
+            </div>
+        </a>
+    </div>
+    <script>
+      // The data/time we want to countdown to
+      var countDownDate = new Date("Dec 24, 2022 00:00:00").getTime();
+
+      // Run myfunc every second
+      var myfunc = setInterval(function () {
+        var now = new Date().getTime();
+        var timeleft = countDownDate - now;
+
+        // Calculating the days, hours, minutes and seconds left
+        var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+        var hours = Math.floor(
+          (timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+
+        // Result is output to the specific element
+        document.getElementById("days").innerHTML = days + "d ";
+        document.getElementById("hours").innerHTML = hours + "h ";
+        document.getElementById("mins").innerHTML = minutes + "m ";
+        document.getElementById("secs").innerHTML = seconds + "s ";
+
+        // Display the message when countdown is over
+        if (timeleft < 0) {
+          clearInterval(myfunc);
+          document.getElementById("days").innerHTML = "";
+          document.getElementById("hours").innerHTML = "";
+          document.getElementById("mins").innerHTML = "";
+          document.getElementById("secs").innerHTML = "";
+          document.getElementById("end").innerHTML = "TIME UP!!";
+        }
+      }, 1000);
+
+    //   var newItem = document.createElement("li");
+    //   var wish = inputVal;
+    //   var wishList = document.getElementById("main__wishList");
+
+    //   function getInputValue() {
+    //     // Selecting the input element and get its value
+    //     var inputVal = document.getElementById("myInput").value;
+
+    //     // Displaying the value
+    //     wishList.appendChild(newItem);
+    //     console.log(inputVal);
+
+    //     // alert(inputVal);
+    //   }
+
+    let form = document.getElementById('addForm');
+let itemList = document.getElementById('items');
+let filter = document.getElementById('filter');
+
+filter.addEventListener('keyup', filterItem);
+
+// Call function 
+form.addEventListener('submit', runEvent);
+
+let deleteBtn = document.getElementById('items');
+    deleteBtn.addEventListener('click', removeItem);
+
+// Filter Items
+function filterItem(e){
+    let text = e.target.value.toLowerCase();
+     
+    //get Item
+    let items = itemList.getElementsByTagName('li');
+    Array.from(items).forEach(function(item){
+        let itemArray = item.firstChild.textContent;
+        if(itemArray.toLocaleLowerCase().indexOf(text) != -1){
+            item.style.display = 'block';
+        }
+        else{
+            item.style.display = 'none';
+        }
+    })
+    
+
+
+}
+
+// Add item function
+function runEvent(e){
+    e.preventDefault();
+
+    // Get input value
+    let inputValue = document.getElementById('item').value;
+    
+    // Create item
+    let li = document.createElement('li');
+
+    // add class to li
+    li.className = 'element';
+
+    // add text to li
+    li.appendChild(document.createTextNode(inputValue));
+    
+    //push item
+    itemList.appendChild(li);
+    
+    //create button
+    let button = document.createElement('button');
+
+    //add Text to botton
+    button.appendChild(document.createTextNode('X'));
+
+    //add classes to button;
+    button.className = " trash delete";
+
+    // push button to li
+    li.appendChild(button);
+
+}
+
+// function remove item
+
+function removeItem(e){
+    if(e.target.classList.contains('delete')){
+        if(confirm('Are You Sure? ')){
+            let li = e.target.parentElement;
+            itemList.removeChild(li);
+        }
+    }
+    console.log(e.target.parentElement);
+}
+
+    </script>
+  </body>
+</html>

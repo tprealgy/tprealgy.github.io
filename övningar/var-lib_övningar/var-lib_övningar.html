@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;900&family=Roboto:wght@400;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Övningar i variabler</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1 class="heading heading-1">Övningar för variabler och bibliotek</h1>
+      <h2 class="heading heading-2">Webbutveckling 1 & 2</h2>
+      <p>
+        Vi kan underlätta arbetet med vår CSS genom att låta det likna
+        programmeringsspråk. Vi kan använda variabler och bibliotek för att
+        skapa en mer dynamisk och lättläst kod, samt underlätta för oss själva
+        och andra att förstå och underhålla koden. Här hittar du övningar för
+        variabler och bibliotek för anvädning inom CSS. Du kan ladda ner
+        övningarna och lösningarna genom att klicka på ikonen.
+      </p>
+      <div class="övningar">
+        <div class="övn-1">
+          <h3></h3>
+          <p>
+            <span>Färger. </span>En enkel sak som variabler kan hjälpa oss att
+            hålla koll på är färger. Det är det första exemplet på en egenskap i
+            vår CSS som kan återkomma på fler ställen. Variabler blir egentligen
+            bara effektiva när vi har en större mängd CSS, just nu övar vi på
+            att använda dom.
+          </p>
+          <a href="#" download
+            ><img src="download-solid.svg" alt="Download icon"
+          /></a>
+        </div>
+        <div class="övn-2">
+          <h3></h3>
+          <p>
+            <span>Flera egenskaper. </span> Ofta har vi en stor mängd innehåll
+            på sidan som ska följa samma stil. Istället ör att upprepa klasser i
+            HTML och sätta color-egenskapen på varje klass i CSS så kan vi
+            använda variabler. Fördelen är nu att OM en ändring görs, så sker
+            det enbart på ett ställe - och inte flera olika.
+          </p>
+          <a href="#" download
+            ><img src="download-solid.svg" alt="Download icon"
+          /></a>
+        </div>
+        <div class="övn-3">
+          <h3></h3>
+          <p>
+            <span>Följsamhet. </span> Vi kan även låta variabler påverka
+            responsiviteten på sdan - och använda dom när vi känner att det
+            behövs. I den här övningen ska du ändra på textfärgen - med en
+            variabel - endast när sidan är under 700px bred.
+          </p>
+          <a href="#" download
+            ><img src="download-solid.svg" alt="Download icon"
+          /></a>
+        </div>
+        <div class="övn-4">
+          <h3></h3>
+          <p>
+            <span>Fonter. </span> En annan sak som går att styra med variabler
+            är fonter. I det här exempelet får du testa en font för rubriker och
+            en för brödtext. Åter igen underlättar det om fonterna någon gång
+            ska bytas ut, eller andra ska testas.
+          </p>
+          <a href="#" download
+            ><img src="download-solid.svg" alt="Download icon"
+          /></a>
+        </div>
+        <div class="övn-5">
+          <h3></h3>
+          <p>
+            <span>SCSS. </span> Vi kan underlätta vårt CSS-skrivande genom att
+            låta datorn generera CSS åt oss. Det öppnar för möjligheten att
+            skriva enklare och mer lättläslig CSS. Använd instruktionerna i
+            filen för att se vad du ska göra. Från och med här kommer övningarna
+            bli något annorlunda - eftersom vi behöver jobba med externa
+            CSS-filer.
+          </p>
+          <a href="#" download
+            ><img src="download-solid.svg" alt="Download icon"
+          /></a>
+        </div>
+        <div class="övn-6">
+          <h3></h3>
+          <p>
+            <span>Generera. </span> Här får du testa att generera en CSS-fil
+            från en SCSS-fil. Du behöver noggrant läsa igenom både
+            instruktionerna i HTML-filen och förklaringarna som du hittar i
+            kommentarer i SCSS-filen.
+          </p>
+          <a href="#" download
+            ><img src="download-solid.svg" alt="Download icon"
+          /></a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const heading = document.querySelectorAll("h3");
+      const link = document.querySelectorAll("a");
+
+      for (let i = 0; i < heading.length; i++) {
+        heading[i].innerHTML = "Övning " + (i + 1);
+      }
+      for (let i = 0; i < link.length; i++) {
+        link[i].href = "övning-" + (i + 1) + ".html";
+      }
+    </script>
+  </body>
+</html>

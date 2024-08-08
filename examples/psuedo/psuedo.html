@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body class="flex-center">
+    <div id="box" class="flex-center">
+        <span>Click me to show my psuedo elements...</span>
+    </div>
+
+    <script>
+        var box      = document.querySelector("#box");
+        var boxAfter = window.getComputedStyle(box, "::after");
+
+        
+
+        box.addEventListener("click", showAfter);
+
+        function showAfter() {
+            
+            if (boxAfter.display == "none") {
+                box.style.setProperty('--dis', "flex")
+                box.style.setProperty('--aniL', "testL 2s")
+                box.style.setProperty('--aniR', "testR 2s")
+
+            } else {
+                box.style.setProperty('--dis', "none")
+
+            }
+        }
+    </script>
+</body>
+</html>

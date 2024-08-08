@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Övning 3</title>
+    <style>
+      :root {
+        --color: blue;
+      }
+
+      h1 {
+        color: var(--color);
+      }
+
+      @media (max-width: 700px) {
+        /* Skriv din variabel här. Använd SAMMA namn som på orginalet - men ändra värdet. */
+        h1 {
+          color: var(--color);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      Sidan är responsiv och har en brytgräns på 700px. Använd brytgränsen för
+      att ändra dina variabler.
+    </h1>
+  </body>
+</html>

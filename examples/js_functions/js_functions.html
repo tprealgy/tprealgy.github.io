@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Functions</title>
+  </head>
+  <body>
+    <script>
+      // Function Declaration 1, old way
+
+      //funtion + name + parameters
+      function add(num1, num2) {
+        // Where the stuff happens
+
+        // Gives output of the sum of the two numbers
+        return num1 + num2;
+      }
+
+      // Print out what 5 + 10 is
+      console.log(add(5, 10));
+
+      // Function Declaration 2, anonymous function, asigned to a variable
+
+      // Variable + = + function + parameters
+      let add = function (num1, num2) {
+        // Returns the sum of the two numbers
+        return num1 + num2;
+      };
+      // Print out what 3 + 4 is
+      console.log(add(3, 4));
+
+      // So far these two functions are the same in practice. Next up is hoisting.
+
+      function add(num1, num2) {
+        return num1 + num2;
+      }
+      console.log(add(3, 3));
+
+      console.log(substract(7, 4));
+      function substract(num1, num2) {
+        return num1 - num2;
+      }
+
+      // Hoisting is when the function is moved to the top of the code, so it can be called before it is declared.
+      // Both of the examples above does work, even though the function is called before it is declared.
+      // The browser reads the code before it executes it, so it knows that the function is there.
+
+      // Now the same thing with 'function expression'
+      // This first example will work!
+      let add = function (num1, num2) {
+        return num1 + num2;
+      };
+      console.log(add(3, 3));
+
+      // This example will not work, because the function is called before it is declared.
+      // With 'function expression' the function is not hoisted. The variable is hoisted, but not the function.
+      // This means that the browser knows there is a variable called 'substract', but it does not know what it is.
+      // It is often unusual to call a function before it is declared, but it is possible.
+      console.log(substract(7, 4));
+      let substract = function (num1, num2) {
+        return num1 - num2;
+      };
+
+      // Arrow functions
+      // First a traditional function
+      let addOriginal = function (num1, num2) {
+        return num1 + num2;
+      };
+
+      // With an arrow function, it looks like this:
+      let add = (num1, num2) => {
+        return num1 + num2;
+      };
+
+      console.log(add(3, 4));
+
+      // If the function is only one line, it can be written like this:
+      let add = (num1, num2) => num1 + num2;
+      console.log(add(3, 4));
+      // This is the same as the function above, but shorter.
+      //
+    </script>
+  </body>
+</html>

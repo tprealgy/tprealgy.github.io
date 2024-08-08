@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;900&family=Roboto:wght@400;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Övningar i responsiv design</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1 class="heading heading-1">Övningar för responsiv design</h1>
+      <h2 class="heading heading-2">Webbutveckling 1 & 2</h2>
+      <p>
+        Här hittar du övningar för responsiv design. Övningarna är uppdelade i
+        olika svårighetsgrader, men passar både
+        <span>Webbutveckling 1 och Webbutveckling 2</span>. Varje länk laddar
+        ner en fil och du hittar instruktioner till varje fil i kommentarerna i
+        filen. De första övningarna är väldigt enkla och passar dig som är helt
+        ny med anpassning av skärmstorlekar. De senare övningarna är mer
+        avancerade och passar dig som har lite mer erfarenhet av design.
+      </p>
+      <p>
+        Vi kan anpassa utseenet på webbsidor med hjälp av CSS. Verktyget vi
+        använder kallas för media query och ser ut såhär: <br />
+        <code class="code__example"
+          >@media screen and (min-width: 768px) {<br />
+          <i>din CSS här</i><br />}</code
+        >
+      </p>
+      <p>
+        Med media-queryn ovan så kommer den CSS som står innanför { } att
+        utföras endast när skärmstorleken är större än 768px.
+      </p>
+      <div class="övningar">
+        <div class="övn-1">
+          <h3></h3>
+          <p>
+            <span>Ändra.</span> När skärmstorleken ändras så behöver innehållet
+            oftast anpassas. Ett enkelt exempel på det är att låta
+            bakgrundsfärgen på sidan skifta mellan två olika färger, baserat på
+            hur bred skärmen är. När du testar din responsiva design så behöver
+            du ändra storlek på webbläsarens fönster.
+          </p>
+          <a href="#" download
+            ><img src="download-solid.svg" alt="Download icon"
+          /></a>
+        </div>
+        <div class="övn-2">
+          <h3></h3>
+          <p>
+            <span>Anpassa.</span> Webbsidor som visas på stora skärmar har ofta
+            mycket utrymme på bredden. När vi ser på samma sida från en telefon
+            så är det tvärt om. Det är ont om bredd och gott om höjd. Därför
+            måste vi anpassa innehållet, så att det inte är lika beroende av
+            bredden av sidan och istället kan fylla höjden av skärmen.
+          </p>
+          <a href="#" download
+            ><img src="download-solid.svg" alt="Download icon"
+          /></a>
+        </div>
+        <div class="övn-3">
+          <h3></h3>
+          <p>
+            <span>Läsa.</span> Även text kan behöva anpassas när det gäller
+            olika skärmstorlekar. Vi vill inte att användare ska behöva zooma på
+            sina telefoner för att kunna läsa text. Därför anpassar vi storleken
+            på texten så att den passar i alla lägetn. I just den här övningen
+            använder vi inte media query, utan tittar på bredden av sidan med
+            enheten <code>vw</code>.
+          </p>
+          <a href="#" download
+            ><img src="download-solid.svg" alt="Download icon"
+          /></a>
+        </div>
+        <div class="övn-4">
+          <h3></h3>
+          <p>
+            <span>Visa och döja. </span>Ibland passar inte innehåll för både
+            fullskärm och mobiler. Då kan vi behöva dölja något, baserat på
+            vilken skärmstorlek som används.
+          </p>
+          <a href="#" download
+            ><img src="download-solid.svg" alt="Download icon"
+          /></a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const heading = document.querySelectorAll("h3");
+      const link = document.querySelectorAll("a");
+
+      for (let i = 0; i < heading.length; i++) {
+        heading[i].innerHTML = "Övning " + (i + 1);
+      }
+      for (let i = 0; i < link.length; i++) {
+        link[i].href = "övning-" + (i + 1) + ".html";
+      }
+    </script>
+  </body>
+</html>

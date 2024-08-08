@@ -1,0 +1,30 @@
+{
+  "classes": [
+    {
+      "class": "1a",
+      "students": [
+        {
+          "name": "Alice",
+          "url": "alice.test"
+        },
+        {
+          "name": "Bob",
+          "url": "bob.test"
+        }
+      ]
+    },
+    {
+      "class": "2b",
+      "students": [
+        {
+          "name": "Camilla",
+          "url": "camilla.test"
+        },
+        {
+          "name": "David",
+          "url": "david.test"
+        }
+      ]
+    }
+  ]
+}

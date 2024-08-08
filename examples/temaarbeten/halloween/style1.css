@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css?family=Gloria+Hallelujah&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+}
+
+/* === ABSOLUTE === */
+.ghost {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 10%;
+  display: none;
+}
+
+.ghost img {
+  width: 100%;
+}
+
+/* === FONT === */
+
+* {
+  font-family: "Gloria Hallelujah", cursive;
+}
+
+nav {
+  font-size: 1.5em;
+}
+
+a {
+  text-decoration: none;
+  color: #232323;
+}
+
+p {
+  padding-bottom: 0;
+}
+
+a:hover {
+  color: orange;
+}
+
+/* === WRAPPER === */
+
+.wrapper {
+  width: 80vw;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* === HEADER === */
+
+header {
+}
+
+.header--logo {
+  width: 25%;
+  display: block;
+  margin: 0 auto;
+  transform: translateX(-10%);
+}
+
+/* === NAV === */
+
+nav {
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  display: flex;
+  justify-content: center;
+}
+
+nav li {
+  display: inline;
+  margin-right: 1em;
+}
+
+/* === SECTIONS === */
+
+section {
+  margin-bottom: 5em;
+  /*   min-height: 50vh; */
+}
+
+.first {
+  position: relative;
+}
+
+.first::after {
+  content: "";
+  position: absolute;
+  bottom: -2.5em;
+  height: 3px;
+  background-color: #232323;
+  left: 20%;
+  right: 20%;
+}
+
+.first--text {
+  width: 60%;
+  display: inline-block;
+}
+
+.first img {
+  width: 40%;
+  float: right;
+}
+
+.first p {
+  position: relative;
+}
+
+.first p::before {
+  content: "";
+  position: absolute;
+  left: -9px;
+  height: 100%;
+  width: 3px;
+  background-color: orange;
+}
+
+.second {
+  /* background-color: red; */
+}
+
+.second--wrapper {
+  background-color: orange;
+  position: relative;
+  left: -12.5%;
+  width: 125%;
+  padding: 1em;
+  line-height: 2.5;
+}
+
+.third {
+  outline: 3px solid black;
+  outline-offset: 1em;
+}
+
+.grid--wrapper {
+  display: grid;
+  grid: repeat(2, 1fr) / repeat(3, 1fr);
+  grid-gap: 8px;
+}
+
+.grid--wrapper img {
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.fourth {
+}
+
+.fourth ol {
+  margin: 0;
+  /* padding: 0; */
+}
+
+.fourth ul {
+  margin-left: -2em;
+  padding: 0;
+  list-style: none;
+}
+
+input {
+  border: 3px solid orange;
+}
+
+/* === MEDIA QUERY === */
+
+@media (max-width: 800px) {
+  .first {
+    height: auto;
+  }
+  .first--text {
+    width: 100%;
+  }
+
+  .first img {
+    display: inline;
+    width: 100%;
+    float: none;
+  }
+}
+
+.pop {
+  position: fixed;
+  background-image: url(https://cdn.openart.ai/stable_diffusion/a8e76aeff87cfe60efb4a5e9c572c409984f0b2f_2000x2000.webp);
+  background-size: cover;
+  background-position: center;
+  background-color: green;
+  top: -100vh;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99;
+  transition: ease-in-out 0.05s;
+  /* scale: 1; */
+}
+
+/* .pop:hover {
+  scale: 2;
+} */

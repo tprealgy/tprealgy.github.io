@@ -1,0 +1,20 @@
+{
+  "fish": [
+    {
+      "name": "Goldfish",
+      "description": "The goldfish is a freshwater fish and one of the most commonly kept aquarium fish. It is native to East Asia but is widely cultivated in many parts of the world."
+    },
+    {
+      "name": "Betta Fish",
+      "description": "Also known as Siamese fighting fish, the Betta fish is popular for its vibrant colors and long, flowing fins. They are native to Southeast Asia."
+    },
+    {
+      "name": "Angelfish",
+      "description": "Angelfish are freshwater cichlids known for their distinctive shape and behavior. They are native to the Amazon River basin and are popular in aquariums."
+    },
+    {
+      "name": "Clownfish",
+      "description": "Clownfish, also known as anemonefish, are small, brightly colored fish known for their symbiotic relationship with sea anemones. They are found in warmer waters of the Indian and Pacific Oceans."
+    }
+  ]
+}

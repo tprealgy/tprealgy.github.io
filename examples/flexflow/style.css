@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background: lightblue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    background-color: lightcoral;
+    height: 90vh;
+    width: 80vw;
+    margin: 0 auto;
+
+
+
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: row; */
+    /* flex-flow: row wrap; */
+   
+}
+
+
+.col-left, .col-right {
+    padding: 1em;
+}
+
+.col-left {
+    background: lightgreen;
+    flex: 1 1 auto;
+
+}
+
+.col-right {
+    background: lightseagreen;
+    flex: 10 1 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: row; */
+    flex-direction: column;
+
+
+}
+
+.col-right p {
+    flex: 1 1 0;
+
+}

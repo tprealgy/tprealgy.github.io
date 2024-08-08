@@ -1,0 +1,190 @@
+/*===== SIDA ====================*/
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template:
+  "head"  6em
+  "nav"   6em
+  "main"  1fr
+  "foot"  10em
+  /1fr;
+}
+
+@media only screen and (max-width: 1005px) {
+  body {
+    grid-template:
+    "head"  6em
+    "nav"   32em
+    "main"  1fr
+    "foot"  30px
+    /1fr;
+  }
+}
+/*===== SIDA ====================*/
+
+/*===== TEXT ====================*/
+h1, h2, h3, p, a {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: #fff;
+}
+/*===== TEXT ====================*/
+
+/*===== HEADER ====================*/
+header {
+  grid-area: head;
+  background-color: #323232;
+  display: grid;
+  place-items: center;
+}
+
+header h1{
+  letter-spacing: 10px;
+}
+
+header h1:hover {
+  color: #ccc;
+}
+/*===== HEADER ====================*/
+
+/*===== NAV ====================*/
+nav {
+  grid-area: nav;
+  width: 100%;
+}
+
+nav div {
+  float:left;
+  width: 25%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
+  display: grid;
+  place-items: center;
+  color: #fff;
+}
+
+nav h1 {
+  font-size: 1.4em;
+}
+
+nav a {
+  background: rgba(0, 0, 0, 0.5);
+  padding: .2em;
+  border-radius: 4px;
+}
+
+nav .link2 {
+  display: none;
+}
+
+nav .comp1 {
+  background-image: url(comp1.jpg);
+} nav .comp1:hover {
+  filter: none;
+} nav .comp1:hover h1 {
+  font-size: 1.7em;
+  transition: ease .5s;
+}
+
+nav .comp2 {
+  background-image: url(comp2.jpg);
+} nav .comp2:hover {
+  filter: none;
+} nav .comp2:hover h1 {
+  font-size: 1.7em;
+  transition: ease .5s;
+}
+
+nav .comp3 {
+  background-image: url(comp3.jpg);
+} nav .comp3:hover {
+  filter: none;
+} nav .comp3:hover h1 {
+  font-size: 1.7em;
+  transition: ease .5s;
+}
+
+nav .comp4 {
+  background-image: url(comp4.png);
+}nav .comp4:hover {
+  filter: none;
+} nav .comp4:hover h1 {
+  font-size: 1.7em;
+  transition: ease .5s;
+}
+
+@media only screen and (max-width: 1005px) {
+  nav div {
+    width: 100%;
+    height: 25%;
+
+  }
+
+  nav .link1 {
+    display: none;
+  }
+
+  nav .link2 {
+    display: inline;
+  }
+}
+/*===== NAV ====================*/
+
+/*===== MAIN ====================*/
+main {
+  grid-area: main;
+}
+
+main iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+main div {
+  display: none;
+}
+
+@media only screen and (max-width: 1005px) {
+  main {
+    background-color: lightgrey;
+  }
+  main iframe {
+    display:none;
+  }
+  main div {
+    display: block;
+  }
+}
+/*===== MAIN ====================*/
+
+/*===== FOOTER ====================*/
+footer {
+  background-color: #323232;
+  grid-column: foot;
+}
+
+#js1 {
+  background-color: yellow;
+  color: #fff;
+}
+
+#js2 {
+  background-color: green;
+  color: #fff;
+}
+/*===== FOOTER ====================*/

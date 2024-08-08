@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+/* Selector för body, allt som finns ovan påverkar taggen body. 
+De inställningar som finns är 0 margin runt om body och att roboto är fonten för all text på sidan */
+
+header {
+    background-image: url(img/header.jpg);
+    /* Här bestämmer vi bakgrundsbilden för header-taggen. Bilden hämtas från mappen img och heter header.jpg */
+    background-size: cover;
+    height: 200px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rubrik {
+    margin: 0;
+    font-family: 'Roboto Slab', serif;
+}
+
+nav {
+    background-color: #232323;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    height: 50px;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+li {
+    list-style: none;
+    margin: 0;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    opacity: 75%;
+}
+
+main {
+    display: flex;
+    flex-flow: column;
+}
+
+.main-wrapper {
+    padding: 2em 0;
+    width: 60%;
+    margin: 0 auto;
+
+    display: flex;
+}
+
+.main-wrapper img {
+    padding-right: 2em;
+}
+
+.main-wrapper p {
+    margin: 0;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .try {
+        width: 50px;
+        height: 50px;
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li class="item" id="one">one</li>
+      <li class="item" id="two">two</li>
+      <li class="item" id="three">three</li>
+      <li class="item" id="four">four</li>
+      <li class="item" id="five">five</li>
+      <li class="item" id="test"></li>
+      <li class="item" id="red"></li>
+      <li class="item" id="green"></li>
+      <!-- Innehåll hämtas från id -->
+    </ul>
+    <p id="print"></p>
+
+    <div class="try"></div>
+
+    <script>
+      const textArea = document.querySelector("#print");
+      const arr = [];
+      const itemCount = document.getElementsByClassName("item").length;
+
+      for (var i = 0; i <= itemCount; i++) {
+        var itemId = document.getElementsByClassName("item")[i].id;
+        arr.push(itemId);
+        var itemNo = document.getElementsByClassName("item")[i];
+        itemNo.addEventListener("click", printId);
+        itemNo.innerHTML = itemId;
+      }
+
+      function printId() {
+        textArea.innerHTML = this.id;
+        // console.log("you pressed #" + this.id);
+        document.querySelector(".try").style.backgroundColor = this.id;
+        document.querySelector(".try").add;
+      }
+    </script>
+  </body>
+</html>

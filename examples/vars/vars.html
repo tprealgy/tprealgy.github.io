@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vars</title>
+    <style>
+      /* https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75%7C0.5%7C0.25,1.5%7C2%7C3%7C4%7C6,s-l&g=s,l,xl,12 */
+      :root {
+        /* Space and typography */
+        --step--2: clamp(0.72rem, 0.8145rem + -0.122vi, 0.7901rem);
+        --step--1: clamp(0.8889rem, 0.885rem + 0.0193vi, 0.9rem);
+        --step-0: clamp(1rem, 0.9565rem + 0.2174vi, 1.125rem);
+        --step-1: clamp(1.125rem, 1.0272rem + 0.4891vi, 1.4063rem);
+        --step-2: clamp(1.2656rem, 1.0944rem + 0.856vi, 1.7578rem);
+        --step-3: clamp(1.4238rem, 1.1548rem + 1.3451vi, 2.1973rem);
+        --step-4: clamp(1.6018rem, 1.2036rem + 1.9909vi, 2.7466rem);
+        --step-5: clamp(1.802rem, 1.2347rem + 2.8369vi, 3.4332rem);
+        --step-6: clamp(2.0273rem, 1.2397rem + 3.9378vi, 4.2915rem);
+        --step-7: clamp(2.2807rem, 1.2081rem + 5.363vi, 5.3644rem);
+        --step-8: clamp(2.5658rem, 1.1259rem + 7.1995vi, 6.7055rem);
+
+        --shadow-color: 0deg 0% 72%;
+        --shadow-elevation-low: 0.3px 0.5px 0.7px
+            hsl(var(--shadow-color) / 0.22),
+          0.4px 0.8px 1px -1.2px hsl(var(--shadow-color) / 0.22),
+          0.8px 1.7px 2.1px -2.5px hsl(var(--shadow-color) / 0.22);
+        --shadow-elevation-medium: 0.3px 0.5px 0.7px
+            hsl(var(--shadow-color) / 0.18),
+          0.6px 1.2px 1.5px -0.6px hsl(var(--shadow-color) / 0.18),
+          1.1px 2.2px 2.8px -1.2px hsl(var(--shadow-color) / 0.18),
+          2.2px 4.3px 5.4px -1.9px hsl(var(--shadow-color) / 0.18),
+          4.1px 8.3px 10.4px -2.5px hsl(var(--shadow-color) / 0.18);
+        --shadow-elevation-high: 0.3px 0.5px 0.7px
+            hsl(var(--shadow-color) / 0.17),
+          0.9px 1.7px 2.2px -0.3px hsl(var(--shadow-color) / 0.17),
+          1.5px 2.9px 3.7px -0.6px hsl(var(--shadow-color) / 0.17),
+          2.2px 4.4px 5.5px -0.8px hsl(var(--shadow-color) / 0.17),
+          3.1px 6.3px 7.9px -1.1px hsl(var(--shadow-color) / 0.17),
+          4.5px 8.9px 11.2px -1.4px hsl(var(--shadow-color) / 0.17),
+          6.3px 12.6px 15.8px -1.7px hsl(var(--shadow-color) / 0.17),
+          8.8px 17.6px 22.1px -1.9px hsl(var(--shadow-color) / 0.17),
+          12.1px 24.2px 30.4px -2.2px hsl(var(--shadow-color) / 0.17),
+          16.3px 32.5px 40.9px -2.5px hsl(var(--shadow-color) / 0.17);
+
+        /* Colors */
+        --color--sugar: #ffffff;
+        --color--creamy-vanilla: #f5f5f5;
+        --color--chocolate-glaze: #6b3e26;
+        --color--strawberry-frosting: #d8416c;
+        --color--blueberry-filling: #4b0082;
+        --color--sweet-tooth: #6f6f6f;
+        --color--black: #000000;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      h1 {
+        font-size: var(--step-5);
+        color: var(--color--chocolate-glaze);
+      }
+      h2 {
+        font-size: var(--step-4);
+        color: var(--color--strawberry-frosting);
+      }
+      h3 {
+        font-size: var(--step-3);
+        color: var(--color--blueberry-filling);
+      }
+      h4 {
+        font-size: var(--step-2);
+        color: var(--color--sweet-tooth);
+      }
+      h5 {
+        font-size: var(--step-1);
+        color: var(--color--black);
+      }
+      h6 {
+        font-size: var(--step-3);
+        color: var(--color--sugar);
+      }
+      p {
+        font-size: var(--step-0);
+        color: var(--color--black);
+      }
+      .box-with-shadow-low {
+        width: 200px;
+        height: 200px;
+        background-color: var(--color--creamy-vanilla);
+        box-shadow: var(--shadow-elevation-low);
+      }
+      .box-with-shadow-medium {
+        width: 200px;
+        height: 200px;
+        background-color: var(--color--creamy-vanilla);
+        box-shadow: var(--shadow-elevation-medium);
+      }
+      .box-with-shadow-high {
+        width: 200px;
+        height: 200px;
+        background-color: var(--color--creamy-vanilla);
+        box-shadow: var(--shadow-elevation-high);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Heading 1</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ea
+      molestiae suscipit, veniam earum, nemo sunt cupiditate quo corporis
+      accusantium quos necessitatibus, tempore quidem cum ab voluptatibus dolore
+      quod. Officiis!
+    </p>
+    <h2>Heading 2</h2>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ea
+      molestiae suscipit, veniam earum, nemo sunt cupiditate quo corporis
+      accusantium quos necessitatibus, tempore quidem cum ab voluptatibus dolore
+      quod. Officiis!
+    </p>
+    <h3>Heading 3</h3>
+
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ea
+      molestiae suscipit, veniam earum, nemo sunt cupiditate quo corporis
+      accusantium quos necessitatibus, tempore quidem cum ab voluptatibus dolore
+      quod. Officiis!
+    </p>
+    <div class="box-with-shadow-low">box with shadow - low</div>
+    <div class="box-with-shadow-medium">box with shadow - medium</div>
+    <div class="box-with-shadow-high">box with shadow - high</div>
+  </body>
+</html>

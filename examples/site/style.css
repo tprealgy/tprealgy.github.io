@@ -1,0 +1,665 @@
+@import url("https://fonts.googleapis.com/css?family=Merriweather:400,900|Montserrat:400,700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+/* ======================
+========= TYPO ==========
+====================== */
+
+h1,
+h2,
+.tile2--fill h3 {
+  color: #fff;
+  font-family: "Merriweather", serif;
+  font-size: 2.3vw;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+.tile2--fill h3 {
+  font-size: 1rem;
+}
+
+a,
+p {
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+  font-size: 1rem;
+}
+
+p {
+  font-size: 0.9rem;
+}
+
+/* ======================
+========= TYPO ==========
+====================== */
+
+/* ======================
+======== BUTTON =========
+====================== */
+
+.btn {
+  width: 120px;
+  height: 50px;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 2px solid #fff;
+  border-radius: 3px;
+
+  margin-right: 2em;
+}
+
+.btn__light {
+  background-color: springgreen;
+}
+
+.btn__light:hover {
+  background: #ffffff;
+  color: springgreen;
+  font-weight: 800;
+  transition: ease 500ms;
+}
+
+.btn__dark {
+  background-color: #232323;
+}
+
+.btn__dark:hover {
+  background: #ffffff;
+  color: #232323;
+  font-weight: 800;
+  transition: ease 500ms;
+}
+
+/* ======================
+  ======= BUTTON ========
+  ====================== */
+
+/* ======================
+  ===== HTML, BODY ======
+  ====================== */
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  display: grid;
+  grid: 65vh auto / auto;
+  position: relative;
+}
+
+/* ======================
+  ===== HTML, BODY ======
+  ====================== */
+
+/* ======================
+  ======== HEADER =======
+  ====================== */
+
+header {
+  background-image: url(http://unsplash.it/1920/800);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  position: relative;
+}
+
+.header--heading {
+  height: 150px;
+  width: calc(100vw * 40px);
+  padding: 1em;
+
+  z-index: 100;
+
+  background-color: rgba(23, 23, 23, 1);
+  border: 3px solid #fff;
+  border-radius: 2px;
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
+  /* position: -webkit-sticky;
+  position: sticky; */
+  /* top: 10px;
+  left: 80px; */
+  position: absolute;
+  bottom: -75px;
+  left: 80px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  height: 100%;
+  margin-left: 37px;
+}
+
+nav,
+ul,
+li,
+li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+}
+
+nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 65px;
+  z-index: 99;
+  justify-content: space-between !important;
+
+  background-color: rgba(23, 23, 23, 1);
+}
+
+ul {
+  width: 50%;
+}
+
+li {
+  margin-right: 2em;
+  width: 5em;
+}
+li a {
+  width: 100%;
+}
+li a:hover {
+  background-color: #fff;
+  color: #232323;
+  font-weight: 800;
+  transition: ease 500ms;
+}
+
+/* ======================
+  ======== HEADER =======
+  ====================== */
+
+/* ======================
+======== MAIN ========
+====================== */
+
+main {
+  background-color: rgb(240, 240, 240);
+  width: 89%;
+  margin: 0 auto;
+  padding: 2em 0;
+
+  display: grid;
+  grid: 250px repeat(auto-fill, auto) / auto;
+}
+
+.main--header {
+  display: grid;
+  grid: auto / 1fr auto;
+
+  background-color: slategray;
+}
+
+.main--intro {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+.main--wrapper__text {
+  padding: 1em;
+  width: 100%;
+  line-height: 2;
+}
+
+.main--wrapper__btn {
+  padding: 1em;
+}
+
+.main--grid {
+  display: grid;
+  grid: 1fr 1fr / 1fr 1fr;
+  place-items: center;
+  grid-gap: 1em;
+  padding: 1em;
+
+  position: relative;
+}
+
+.main--grid::before,
+.main--grid::after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 2px;
+  background: #232323;
+}
+
+.main--grid::after {
+  transform: rotate(90deg);
+}
+
+/* ======================
+======== MAIN ========
+====================== */
+
+/* ======================
+======== CTA ===========
+====================== */
+
+.cta {
+  background-image: url(http://unsplash.it/1980/400);
+  text-align: center;
+  margin: 3em 0 2em 0;
+  padding: 5em;
+
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 2;
+
+  outline: 5px solid #fff;
+  outline-offset: -10px;
+}
+
+.cta--text {
+  background-color: rgba(23, 23, 23, 0.7);
+  border-radius: 3px;
+  padding: 1em;
+}
+
+.cta p:first-of-type {
+  padding-bottom: 2em;
+}
+
+.cta p {
+  padding: 0 1em;
+}
+
+/* ======================
+======== CTA ===========
+====================== */
+
+/* ======================
+====== TEXT-AREA ========
+====================== */
+
+.text--area {
+  background-color: #fff;
+  outline: 15px solid #232323;
+  outline-offset: -30px;
+
+  padding: 50px;
+
+  display: grid;
+  grid: 1fr 1fr / 1fr 1fr;
+  place-items: center;
+
+  position: relative;
+}
+
+.text--area::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 75%;
+  background-color: #232323;
+}
+
+.text--area div {
+  padding: 1em;
+}
+
+.text--area p {
+  color: #232323;
+  line-height: 2;
+}
+
+.text--area span {
+  font-weight: 800;
+}
+
+/* ======================
+====== TEXT-AREA ========
+====================== */
+/* ======================
+======== COMMENT ========
+====================== */
+.comment {
+  display: grid;
+  grid: 1fr / 150px 1fr;
+  grid-gap: 2em;
+
+  padding: 1em;
+}
+
+.comment p {
+  color: #232323;
+}
+
+.comment--user {
+  background-color: #fff;
+  position: relative;
+  padding: 0.5em;
+}
+
+.comment--user::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -1em;
+  height: 100%;
+  width: 2px;
+  background-color: #232323;
+}
+
+.comment--img {
+  max-width: 100%;
+}
+
+.comment--text {
+}
+
+.comment--bubble {
+  padding: 2em 2em;
+  background-color: #fff;
+  border-radius: 10px;
+  position: relative;
+  z-index: 99;
+  line-height: 2;
+}
+
+.comment--bubble::before,
+.comment--bubble::after {
+  content: "";
+  position: absolute;
+}
+.comment--bubble::after {
+  /* width: 20px;
+  height: 20px;
+  
+  background-color: #fff; */
+  bottom: -20px;
+  left: 0;
+
+  width: 20px;
+  height: 20px;
+  border-top: 20px solid transparent;
+  border-left: 20px solid #fff;
+  border-bottom: 20px solid transparent;
+  z-index: 1;
+}
+
+/* ======================
+======== COMMENT ========
+====================== */
+
+/* ======================
+======== TILE ===========
+====================== */
+
+.tile {
+  background-color: #232323;
+  padding: 1em;
+  height: 520px;
+
+  display: grid;
+  grid: 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+
+  margin-bottom: 2em;
+}
+
+.tile--img {
+  background-size: cover;
+  border: 2px solid #fff;
+  position: relative;
+}
+
+.tile--img::after {
+  display: none;
+
+  content: "Hover-effect med psuedo-klass och position absolute!";
+  font-family: "Merriweather", serif;
+  color: #fff;
+  font-size: 24px;
+  vertical-align: middle;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(23, 23, 23, 0.7);
+}
+
+.tile--img:hover::after {
+  display: block;
+}
+
+.tile--img__1 {
+  background-image: url(http://unsplash.it/1000);
+  grid-column: 1 / 4;
+  grid-row: 1 / 2;
+}
+
+.tile--img__2 {
+  background-image: url(http://unsplash.it/1000);
+  grid-column: 1 / 2;
+  grid-row: 2 / 4;
+}
+
+.tile--img__3 {
+  background-image: url(http://unsplash.it/800);
+
+  grid-column: 4 / 5;
+  grid-row: 1 / 4;
+}
+
+.tile--img__4 {
+  background-image: url(http://unsplash.it/400);
+
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.tile--img__5 {
+  background-image: url(http://unsplash.it/450);
+
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+
+.tile--img__6 {
+  background-image: url(http://unsplash.it/300);
+
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+}
+
+.tile--img__7 {
+  background-image: url(http://unsplash.it/350);
+
+  grid-column: 3 / 4;
+  grid-row: 3 / 4;
+}
+
+/* ======================
+======== TILE ===========
+====================== */
+
+/* ======================
+======== TILE2 ===========
+====================== */
+
+.tile2 {
+  background-color: #232323;
+  padding: 1em;
+  height: 520px;
+
+  display: grid;
+  grid: 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+
+  margin-bottom: 2em;
+}
+
+.tile2--img {
+  background-size: cover;
+  border: 2px solid #fff;
+
+  overflow: hidden;
+  position: relative;
+}
+
+.tile2--fill {
+  position: absolute;
+  bottom: calc(-100% - 2px);
+
+  background-color: rgba(23, 23, 23, 0.7);
+  width: 100%;
+  height: 100%;
+  padding: 2em 1em;
+
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
+}
+
+/* .tile2--img:hover {
+  filter: blur(4px);
+} */
+
+.tile2--img:hover .tile2--fill {
+  bottom: 0;
+  transition: ease 500ms;
+}
+
+.tile2--img__1 {
+  background-image: url(http://unsplash.it/1000);
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.tile2--img__2 {
+  background-image: url(http://unsplash.it/1000);
+  grid-column: 1 / 2;
+  grid-row: 2 / 4;
+}
+
+.tile2--img__3 {
+  background-image: url(http://unsplash.it/800);
+
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+}
+
+.tile2--img__4 {
+  background-image: url(http://unsplash.it/400);
+
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+}
+
+.tile2--img__5 {
+  background-image: url(http://unsplash.it/450);
+
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+}
+
+.tile2--img__6 {
+  background-image: url(http://unsplash.it/300);
+
+  grid-column: 3 / 4;
+  grid-row: 2 / 4;
+}
+
+.tile2--img__7 {
+  background-image: url(http://unsplash.it/350);
+
+  grid-column: 4 / 5;
+  grid-row: 1 / 4;
+}
+
+/* ======================
+======== TILE2 ==========
+====================== */
+
+/* ======================
+======== blur ===========
+====================== */
+
+.blur {
+  height: 400px;
+  background-color: lightslategray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blur--box {
+  width: 250px;
+  height: 250px;
+  position: absolute;
+
+  /* outline: salmon 2px solid; */
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.blur--img:hover {
+  filter: blur(2px);
+  -moz-filter: blur(3px);
+}
+
+.blur--img:hover + .blur--box {
+  display: flex;
+}
+
+/* ======================
+======== blur ===========
+====================== */
+
+/* ======================
+======== test ===========
+====================== */
+
+/* ======================
+======== test ===========
+====================== */
+
+/* Fluid type hack (linear interpolation) i.e. scale your font size depending on how big the display is.
+
+font-size: calc( Apx + (B-A) * (100vw - Cpx)/(D-C) );
+
+A = Min font size
+
+B = Max font size
+
+C = Min screen size
+
+D = Max screen size */
+
+/* * {
+  font-size: calc(10px + (20 - 10) * (100vw - 300px) / (1000 - 300));
+} */

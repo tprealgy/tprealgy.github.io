@@ -1,0 +1,83 @@
+* {
+    box-sizing: border-box;
+}
+
+html,body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: calc(1rem + 1vw);
+}
+
+.wrapper {
+    width: 25vw;
+    aspect-ratio: 1 / 1;
+    /* background-color: red; */
+    display: grid;
+    grid: repeat(3, 1fr) / repeat(3, 1fr);
+}
+
+.wrapper > * {
+    /* background-color: lightblue; */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 1em;
+
+}
+
+.vad, .hur, .varfor {
+    position: relative;
+}
+.vad::before,
+.vad::after,
+.hur::before, 
+.hur::after, 
+.varfor::before, 
+.varfor::after {
+    position: absolute;
+    content: '';
+    background-color: lightblue;
+
+}
+
+.vad::before,
+.hur::before, 
+.varfor::before {
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+}
+
+.vad::after,
+.hur::after, 
+.varfor::after {
+    right: 0;
+    height: calc(100% + 3px);
+    width: 3px;
+    bottom: 0;
+    
+}
+
+.vad {
+    grid-column: 1;
+    grid-row: 3;
+
+}
+
+.hur {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.varfor {
+    grid-column: 3;
+    grid-row: 1;
+}

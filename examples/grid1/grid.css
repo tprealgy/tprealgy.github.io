@@ -1,0 +1,34 @@
+main {
+    width: 50vw;
+    height: 75vh;
+    background-color: red;
+
+    display: grid;
+    grid: 100px 1fr 50px / .5fr 1fr;
+}
+
+
+.area-1 {
+    /* width: 100px; */
+    /* height: 100px; */
+    background-color: green;
+    grid-column: 1 / -1;
+    
+}
+.area-2 {
+    /* width: 100px; */
+    /* height: 100px; */
+    background-color: yellow;
+}
+.area-3 {
+    /* width: 100px; */
+    /* height: 100px; */
+    background-color: blue;
+    overflow-y: scroll;
+}
+.area-4 {
+    /* width: 100px; */
+    /* height: 100px; */
+    background-color: pink;
+    grid-column: 1 / -1;
+}

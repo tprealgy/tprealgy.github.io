@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,400,700');
+
+/*==========- GENERAL START -==========*/
+*  {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #ccc;
+  height: 100%;
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  width: 80vw;
+  height: auto;
+
+  font-family: 'Oswald', sans-serif;
+  background-color: #232323;
+}
+
+h1, h2, h3, p, a, span {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  line-height: 2em;
+  text-decoration: none;
+}
+
+.wrapper {
+  width: 100%
+  height: 100%;
+}
+
+@media only screen and (max-width: 800px) {
+  html {
+    height: 100%;
+    background-color: #232323;
+  }
+  body {
+      width: 100vw;
+      height: 100%;
+   }
+}
+/*==========- HEADER START -==========*/
+header {
+  height: 25vh;
+  background-image: url(../img/header.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+
+header a {
+  font-size: 5em;
+
+} header a:hover {
+    color: #ccc;
+    transition: ease 500ms;
+
+} header a:hover span {
+  color: red;
+}
+
+@media only screen and (max-width: 800px) {
+   header {
+       height: 15vw;
+   }
+   header a {
+     font-size: 2em;
+   }
+}
+/*==========- NAV START -==========*/
+nav {
+  height: 5em;
+  width: 100%;
+}
+nav span {
+  color: black;
+  font-size: 1.3em;
+}
+nav .nav_button {
+  height: 5em;
+  width: 25%;
+  float: left;
+
+  background-image: url(../img/button-1.jpg);
+  background-position: center;
+  background-size: cover;
+
+  border: 1px solid #fff;
+  filter: grayscale(100%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+nav .nav_button:hover  {
+    filter: grayscale(0);
+}
+nav .nav_button:hover span {
+    font-size: 1.5em;
+    font-weight: 900;
+    color: #fe5167;
+    text-transform: uppercase;
+
+    transition: ease 500ms;
+}
+
+@media only screen and (max-width: 800px) {
+  nav {
+    height: 12em;
+  }
+   nav .nav_button {
+       width: 100%;
+       height: 3em;
+   }
+}
+/*==========- MAIN START -==========*/
+main {
+  display: block;
+  height: 3000%;
+  min-height: 70vh;
+}
+
+main img {
+  max-width: 7em;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+#div0 {
+  padding: 1em;
+  height: 100%;
+  color: red;
+}
+#div1 {
+  width: 100%;
+  height: auto;
+
+  display: grid;
+  grid-gap: 1em;
+  grid-template:
+  "img1 text" 1fr
+  "img2 text" 1fr
+  "img3 text" 1fr
+  "img4 text" 1fr
+  /7em 1fr;
+}
+
+#div2 {
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  grid-gap: 1em;
+  grid-template:
+  "text img1" 1fr
+  "text img2" 1fr
+  "text img3" 1fr
+  "text img4" 1fr
+  /1fr 7em;
+}
+
+#div3 {
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  grid-gap: 1em;
+  place-items: center;
+  grid-template:
+  "img1 img2 img3 img4" 7em
+  "text text text text" 1fr
+  /1fr   1fr   1fr   1fr;
+}
+
+#div4 {
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  grid-gap: 1em;
+  place-items: center;
+  grid-template:
+  "text text text text" 1fr
+  "img1 img2 img3 img4" 7em
+  /1fr   1fr   1fr   1fr;
+}
+
+.img1 {
+  grid-area: img1;
+}
+.img2 {
+  grid-area: img2;
+}
+.img3 {
+  grid-area: img3;
+}
+.img4 {
+  grid-area: img4;
+}
+.text {
+  grid-area: text;
+}
+
+@media only screen and (max-width: 800px) {
+   main {
+
+   }
+   #div0 {
+
+   }
+}
+
+/*==========- FOOTER START -==========*/
+footer {
+  background-color: red;
+  height: 5vh;
+}

@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+}
+body div {
+  width: 50vw;
+  background-color: rgb(253, 60, 60);
+  margin: 0 auto;
+  padding: 5rem;
+}
+
+.intro p {
+  font-size: 2rem;
+}
+
+.instruktioner li {
+  font-size: 1.5rem;
+}
+.instruktioner li:hover {
+  font-weight: bold;
+}/*# sourceMappingURL=övning-6.css.map */

@@ -1,0 +1,171 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  position: relative;
+  font-family: "Roboto", sans-serif;
+}
+
+.santa {
+  position: absolute;
+  width: 150px;
+  aspect-ratio: 1 / 1;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 1em;
+  left: 1em;
+  top: 1em;
+  animation-duration: 2s;
+  z-index: 9;
+}
+
+.santa:hover {
+  animation-name: wiggle;
+  cursor: pointer;
+}
+
+@keyframes wiggle {
+  0% {
+    transform: rotate(0);
+  }
+  33% {
+    transform: rotate(-30deg);
+  }
+  66% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+.santa__img {
+  width: 100%;
+}
+
+header {
+  position: relative;
+  background-image: url(img/header-bg.jpg);
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+  font-family: "Mountains of Christmas", cursive;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 2em;
+  font-size: 2.5rem;
+}
+header::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0) 70%,
+    rgba(255, 255, 255, 1)
+  );
+}
+
+.header__title {
+  text-shadow: 3px 3px #232323;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.main__col {
+  padding: 2em;
+}
+
+.list__item--open {
+  color: green;
+  font-weight: bold;
+  margin: 0.5em 0;
+}
+.list__item--closed {
+  color: red;
+}
+
+.main__desc {
+  max-width: 100ch;
+  line-height: 1.6;
+}
+
+main .decoration {
+  display: flex;
+  width: max-content;
+  justify-content: space-evenly;
+  width: 100ch;
+  position: relative;
+  z-index: 9;
+}
+main .decoration::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  height: 2px;
+  width: 100%;
+  background-color: red;
+  z-index: -1;
+}
+
+.breaker {
+  background-color: #232323;
+  text-align: center;
+  padding: 1em 0;
+  transition: ease-in-out 150ms;
+  position: relative;
+}
+
+.breaker__img {
+  height: 500px;
+  width: 70%;
+  object-fit: cover;
+}
+
+.breaker__hover {
+  position: absolute;
+  top: 1em;
+  left: 40%;
+  right: 40%;
+  /* left: 15%;
+  right: 15%; */
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  transition: ease-in-out 250ms;
+  cursor: pointer;
+  color: #232323;
+}
+
+.breaker__heading {
+  margin: 0;
+}
+
+.breaker:hover {
+  background-color: #525252;
+}
+.breaker:hover .breaker__hover {
+  opacity: 1;
+  left: 15%;
+  right: 15%;
+}
+y a {
+  color: #232323;
+}

@@ -1,0 +1,32 @@
+html, body {
+    height: 100%;
+}
+body {
+    color: #fff;
+    margin: 0;
+    background-color: red;
+    display: grid;
+    grid: 80px 25vh 1fr / auto;
+}
+
+div {
+    background-image: linear-gradient(45deg, black, white);
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: none;
+}
+@media screen and (min-width: 992px) {
+    body {
+        grid: auto / 80px 1fr 1fr;
+    }
+    .menu {
+        display: none;
+    }
+    ul {
+        display: flex;
+    }
+  }

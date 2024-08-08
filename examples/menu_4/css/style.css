@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css?family=Caladea:400,700|Roboto:400,700,900&display=swap");
+aside {
+  background: #fafafa;
+  transition: ease-in-out 250ms;
+}
+aside .nav {
+  padding: 1em 2em;
+  position: fixed;
+}
+aside .nav__list {
+  list-style: none;
+  margin: 0;
+  padding-left: 2rem;
+}
+aside .nav__item {
+  padding-bottom: 0.5rem;
+}
+
+@media screen and (max-width: 600px) {
+  aside .nav {
+    transform: translateX(-100%);
+  }
+}
+.main {
+  padding: 10vw 4em 0 4em;
+}
+.main__wrapper {
+  max-width: 75%;
+}
+.main__header {
+  margin: 0 0 10em 0;
+}
+.main__sec:not(:first-of-type) {
+  margin-top: 4em;
+}
+.main__text {
+  margin-bottom: 0;
+}
+.main__tag {
+  margin: 0.5em 0 2em 0;
+}
+.main__tags {
+  background-color: #eeeeee;
+  padding: 0.35em 1.1em 0.35em 0.35em;
+  margin-right: 0.5em;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 3px 3px 7px 3px;
+  position: relative;
+}
+.main__tags::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  right: 1px;
+  top: 1px;
+  background-color: white;
+}
+
+.sec__wrapper {
+  padding: 2em 0;
+}
+
+@media screen and (max-width: 600px) {
+  .main__sec {
+    max-width: 100%;
+  }
+}
+h1 {
+  font-size: 2.4em;
+}
+
+h2 {
+  font-size: 1.8em;
+  text-transform: uppercase;
+}
+
+h1,
+h2 {
+  font-family: "Caladea";
+  font-weight: bold;
+}
+
+p {
+  max-width: 60ch;
+  line-height: 1.6;
+  color: #323232;
+}
+
+a {
+  color: #29b6f6;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+a:hover, a:active {
+  opacity: 0.5;
+}
+
+p,
+a,
+.main__tags {
+  font-family: "Roboto";
+}
+
+p,
+li,
+a {
+  font-size: 1.4rem;
+}
+
+.main a {
+  font-size: 1.6rem;
+}
+.main__tags {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+.main__heading--2 {
+  margin: 0;
+}
+.main__heading--2:not(:first-child) {
+  margin: 2.5em 0 0 0;
+}
+.main__heading--3 {
+  color: #ff5722;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 600px) {
+  .main p {
+    max-width: 80ch;
+    margin-bottom: 1em;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  display: grid;
+  grid: auto/50ch 1fr;
+  position: relative;
+}
+
+.bg {
+  position: absolute;
+  max-width: 100%;
+  max-height: 400px;
+  top: 0;
+  right: 0;
+  z-index: -5;
+}
+.bg__img {
+  width: 100%;
+  height: 100%;
+}
+
+.up {
+  position: fixed;
+  right: 2%;
+  bottom: 3%;
+  width: 75px;
+  height: 75px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+.up img {
+  width: 100%;
+  height: 100%;
+}
+
+.test {
+  position: absolute;
+  z-index: 999;
+}
+
+.label {
+  color: red;
+  font-size: 25px;
+  z-index: 999;
+  left: 15ch;
+  top: 0.7em;
+  position: fixed;
+  font-family: "Roboto";
+  transition: ease-in-out 250ms;
+  cursor: pointer;
+  border: 2px solid red;
+  border-radius: 50%;
+  width: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.label:hover {
+  color: white;
+  border: 2px solid white;
+  background: red;
+}
+
+#checkbox {
+  display: none;
+  position: absolute;
+}
+
+#checkbox:checked ~ .label {
+  color: green;
+  left: 2ch;
+  border: 2px solid green;
+}
+#checkbox:checked ~ .label:hover {
+  background: green;
+  color: white;
+  border: 2px solid white;
+}
+
+#checkbox:checked ~ aside {
+  transform: translateX(-93%);
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    grid: auto/10px 1fr;
+  }
+}/*# sourceMappingURL=style.css.map */

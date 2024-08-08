@@ -1,0 +1,19 @@
+@media screen and (max-width: 600px) {
+  main {
+    flex-flow: column;
+    width: 100vw !important;
+  }
+
+  .section {
+    padding: 8em 2em;
+    flex-flow: column;
+    height: auto !important;
+    & a {
+      display: none;
+    }
+  }
+}
+
+.wrapper {
+  flex-flow: column;
+}

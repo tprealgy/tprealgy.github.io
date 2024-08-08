@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.design {
+  position: relative;
+  height: 300px;
+  width: 300px;
+
+  margin: 0 auto;
+  margin-top: 10em;
+}
+
+.design > * {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.border {
+  box-sizing: border-box;
+  border: 15px #eb311f solid;
+  transform: rotate(45deg);
+  box-shadow: 0 0 10px #eb311f, inset 0 0 20px #eb311f;
+}
+
+.blend > * {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  mix-blend-mode: multiply;
+}
+
+/* Skapa grid */
+.grid {
+  display: grid;
+  grid: repeat(2, 1fr) / repeat(2, 1fr);
+}
+
+/* Lägger vitt på Q2 och Q3 */
+[data-white] {
+  background-color: white;
+}

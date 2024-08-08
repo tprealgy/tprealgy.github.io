@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css" />
+  </head>
+  <body>
+    <div class="pop"></div>
+    <div class="wrapper">
+      <header>
+        <img src="img/halloween.png" alt="logo" class="header--logo" />
+        <nav>
+          <ul>
+            <li><a href="#">Start</a></li>
+            <li><a href="#">Spooky!</a></li>
+            <li><a href="#">Scary!</a></li>
+          </ul>
+        </nav>
+      </header>
+      <section class="first">
+        <div class="first--text">
+          <p>
+            Stalking wind, drenched chilling sick mental, with mutilation
+            zombies blood, or shaking with willow trees shriek. In the deranged
+            Halloween slice. Anthrax putrid, disturbing and morbid convulsing,
+            rotten menacin.
+          </p>
+
+          <p>
+            Fatal bleak, monstrosity dread with demon scourge terrifying. Blood
+            guns bury scream, stab graveyard crazed dark crying. Falling are
+            graveyard graves est. In willow trees, killer dolls are rotten teeth
+            bite, sheep children virus nibh. In zombies brains unknown ghost
+            creepy. In the deranged Halloween
+          </p>
+        </div>
+        <img src="img/bat.png" alt="scary bats" />
+      </section>
+      <section class="second">
+        <div class="second--wrapper">
+          <p>
+            Bowels exorcism grave cut, murderer creature ripped. Mental hospital
+            sliced drowning. Bloodcurdling decomposed zombie in virus scared cat
+            Michael Myers worms. killer mental psychotic sliced. Virus witch
+            demonic dripping, at werewolf psycho slice flames. Needles at bowels
+            alarming. Haunt suicide silent, gory as demonic alarming, buried in
+            fallen angel. screams exorcism oozed smashed. Killer scourge scared,
+            drowning helpless sheep at, terrifyin.
+          </p>
+          <p>
+            And crazy gory. Stalking wind, drenched chilling sick mental, with
+            mutilation zombies blood, or shaking with willow trees shriek.
+            Buried non guts claw and creature hair-raising decapitated at est.
+            Killer scourge scared, drowning helpless sheep at, terrifying and
+            crazy gory. Edgines.
+          </p>
+        </div>
+      </section>
+      <section class="third">
+        <div class="grid--wrapper">
+          <img src="img/grid1.jpg" alt="very very spooky image" />
+          <img src="img/grid2.jpg" alt="very very spooky image" />
+          <img src="img/grid3.jpg" alt="very very spooky image" />
+          <img src="img/grid4.jpg" alt="very very spooky image" />
+          <img src="img/grid5.jpg" alt="very very spooky image" />
+          <img src="img/grid6.jpg" alt="very very spooky image" />
+        </div>
+      </section>
+
+      <section class="fourth">
+        <ol>
+          <ul>
+            <li>Lista för saker att ha på Halloween!</li>
+          </ul>
+          <li><input type="checkbox" class="check" /> Läskig pumpa</li>
+          <li>
+            <input type="checkbox" class="check" /> Utklädsel: Spöke, pirat
+            eller katt
+          </li>
+          <li><input type="checkbox" class="check" /> Godis</li>
+          <li><input type="checkbox" class="check" /> Pumpkin spice latte</li>
+          <li>
+            <input type="checkbox" class="check checkboo" /> Barn att skrämma
+          </li>
+        </ol>
+      </section>
+    </div>
+    <div class="ghost"><img src="img/ghost.gif" alt="ghost" /></div>
+
+    <script>
+      const logo = document.querySelector(".header--logo");
+
+      logo.addEventListener("mouseover", function () {
+        alert("BOO!");
+      });
+
+      const checkAll = document.querySelectorAll(".check");
+
+      checkAll.forEach((check) => {
+        check.addEventListener("click", function () {
+          if (check.checked) {
+            check.parentElement.style.textDecoration = "line-through";
+          } else {
+            check.parentElement.style.textDecoration = "none";
+          }
+        });
+      });
+
+      let i = 250;
+
+      const checkBoo = document.querySelector(".checkboo");
+      checkBoo.addEventListener("click", function () {
+        if (checkBoo.checked) {
+          document.querySelector(".pop").style.top = "0";
+          window.setTimeout(function () {
+            document.querySelector(".pop").style.scale = "5";
+          }, i);
+          window.setTimeout(function () {
+            document.querySelector(".pop").style.scale = "1";
+          }, i * 2);
+          window.setTimeout(function () {
+            document.querySelector(".pop").style.scale = "5";
+          }, i * 3);
+          window.setTimeout(function () {
+            document.querySelector(".pop").style.scale = "1";
+          }, i * 4);
+        }
+      });
+    </script>
+  </body>
+</html>

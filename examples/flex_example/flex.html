@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="flex_oneElement">
+      <main>
+        <div class="card" id="card">
+          <div class="box-wrapper">
+            <div class="box"></div>
+          </div>
+        </div>
+      </main>
+      <aside>
+        <ul>
+          <li class="list_title bold">
+            justify-content: <span id="jc_list_title"></span>
+          </li>
+          <li id="jc_flexStart">flex-start</li>
+          <li id="jc_center">center</li>
+          <li id="jc_flexEnd">flex-end</li>
+        </ul>
+        <ul>
+          <li class="list_title bold">
+            align-items: <span id="ai_list_title"></span>
+          </li>
+          <li id="ai_flexStart">flex-start</li>
+          <li id="ai_center">center</li>
+          <li id="ai_flexEnd">flex-end</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="flex_twoElements">
+      <main>
+        <div class="card" id="card">
+          <div class="box-wrapper">
+            <div class="box"></div>
+            <div class="box"></div>
+          </div>
+        </div>
+      </main>
+      <aside>
+        <ul>
+          <li class="list_title bold">
+            justify-content: <span id="jc_list_title2"></span>
+          </li>
+          <li id="jc_spaceBetween">space-between</li>
+          <li id="jc_spaceAround">space-around</li>
+          <li id="jc_spaceEvenly">space-evenly</li>
+        </ul>
+        <ul>
+      </aside>
+    </section>
+    <script>
+      const card = document.getElementById("card");
+      const jcTitle = document.getElementById("jc_list_title");
+      const aiTitle = document.getElementById("ai_list_title");
+
+      document
+        .getElementById("jc_flexStart")
+        .addEventListener("click", jc_flexStart);
+      document.getElementById("jc_center").addEventListener("click", jc_center);
+      document
+        .getElementById("jc_flexEnd")
+        .addEventListener("click", jc_flexEnd);
+      document
+        .getElementById("ai_flexStart")
+        .addEventListener("click", ai_flexStart);
+      document.getElementById("ai_center").addEventListener("click", ai_center);
+      document
+        .getElementById("ai_flexEnd")
+        .addEventListener("click", ai_flexEnd);
+
+      function jc_flexStart() {
+        card.style.justifyContent = "flex-start";
+        // document.getElementById("jc_flexStart").classList.add("bold");
+        jcTitle.innerHTML = card.style.justifyContent;
+      }
+      function jc_center() {
+        card.style.justifyContent = "center";
+        jcTitle.innerHTML = card.style.justifyContent;
+      }
+      function jc_flexEnd() {
+        card.style.justifyContent = "flex-end";
+        jcTitle.innerHTML = card.style.justifyContent;
+      }
+      function ai_flexStart() {
+        card.style.alignItems = "flex-start";
+        aiTitle.innerHTML = card.style.alignItems;
+      }
+      function ai_center() {
+        card.style.alignItems = "center";
+        aiTitle.innerHTML = card.style.alignItems;
+      }
+      function ai_flexEnd() {
+        card.style.alignItems = "flex-end";
+        aiTitle.innerHTML = card.style.alignItems;
+      }
+
+      const jcTitle2 = document.getElementById("jc_list_title2");
+
+      document.getElementById("jc_spaceBetween").addEventListener("click", jc_spaceBetween);
+      document.getElementById("jc_spaceAround").addEventListener("click", jc_spaceAround);
+      document.getElementById("jc_spaceEvenly").addEventListener("click", jc_spaceEvenly);
+
+      function jc_spaceBetween() {
+        card.style.justifyContent = "space-between";
+        jcTitle2.innerHTML = card.style.justifyContent;
+      }
+      function jc_spaceAround() {
+        card.style.justifyContent = "space-around";
+        jcTitle2.innerHTML = card.style.justifyContent;
+      }
+      function jc_spaceEvenly() {
+        card.style.justifyContent = "space-evenly";
+        jcTitle2.innerHTML = card.style.justifyContent;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Övning 2</title>
+    <style>
+      .wrapper {
+        display: flex;
+        width: 50vw;
+        height: 100vw;
+        margin: 0 auto;
+      }
+
+      .box {
+        aspect-ratio: 1;
+      }
+
+      .box1 {
+        background-color: lightgreen;
+      }
+      .box2 {
+        background-color: lightgoldenrodyellow;
+      }
+      .box3 {
+        background-color: lightcoral;
+      }
+
+      @media screen and (max-width: 768px) {
+        /* skriv en selektor för .wrapper och låt den ha en flex-direction som gör att boxarna hamnar under varandra när skärmen är mindre än 768px bred. */
+        /* Testa din CSS genom att krympa bredden på webbläsarens fönster. */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="box box1"></div>
+      <div class="box box2"></div>
+      <div class="box box3"></div>
+    </div>
+  </body>
+</html>

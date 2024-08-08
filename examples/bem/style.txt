@@ -1,0 +1,69 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+body {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  background: rgb(238, 238, 238);
+  font-family: sans-serif;
+}
+
+/* STANDARD TILL HIT */
+
+.card {
+  padding: 0 5em;
+}
+
+.card__img {
+  display: block;
+  height: 100px;
+  width: 100%;
+  background: #e0466b;
+}
+
+.card__content {
+  padding: 1.5em;
+  background: white;
+}
+
+.card__list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.card__item {
+  padding: 0.3em 0.5em;
+  margin-right: 0.5em;
+  background: rgb(230, 230, 230);
+  border-radius: 0.3em;
+  font-size: 0.85em;
+}
+
+.card__item--active {
+  background: #d4d4d4;
+  font-weight: bold;
+}
+
+.card__link {
+  background: #2c8973;
+  color: white;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  border: 0.5em;
+  display: inline-block;
+  margin-top: 0.5em;
+}
+
+.card__link:hover {
+  background: #267764;
+}

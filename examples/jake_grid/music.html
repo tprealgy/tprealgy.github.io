@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+          <title>Jake's Coffee Shop</title>
+          <link rel="stylesheet" href="style.css">
+          <link rel="stylesheet" href="music.css">
+        </head>
+        <body>
+             <div id="container">
+            <div id="logo">
+              <h1> Jake's Coffee Shop </h1>
+            </div>
+            <div id="leftcolumn">
+              <a class="navBar" href="index.html">Home</a>
+              <a class="navBar" href="menu.html">Menu</a>
+              <a class="navBar" href="music.html">Music</a>
+              <a class="navBar" href="jobs.html">Jobs</a>
+            </div>
+            <div id="rightcolumn">
+              <p>Music we play...</p>
+              <img id="CoffeePic" src="img/music.jpg" alt="coffee cup" width="200" height="200">
+              <ul>
+                <li>Rebecca Black</li>
+                <li>Justin Bieber</li>
+                <li>Nickleback</li>
+                <li>Dr. Bombay</li>
+                <li>Aqua</li>
+                <li> ... </li>
+              </ul>
+              <form>
+                <button  type = "button" id="butLatte"> Latte </button>
+                <button  type = "button" id="butCappuccino"> Cappuccino </button>
+                <button  type = "button" id="butEspresso"> Espresso </button>
+              </form>
+                <p>23 Pine Road <br> Nottingham, NG1 5YU <br> 0115 9324567</p>
+              </div>
+              <div id="footer">
+                Copyright &copy; 2011 Jake's Coffee House<br>
+                <a href="mailto:jake@jcoffee.com">jake@jcoffee.com</a>
+              </div>
+              <script>
+                document.getElementById('butLatte').addEventListener('click', function() {
+                document.getElementById("CoffeePic").src = "img/latte.jpg";}, false);
+                document.getElementById('butCappuccino').addEventListener('click', function() {
+                document.getElementById("CoffeePic").src = "img/cappuccino.jpg";}, false);
+                document.getElementById('butEspresso').addEventListener('click', function() {
+                document.getElementById("CoffeePic").src = "img/espresso.jpg";}, false);
+
+              </script>
+            </div>
+          </body>

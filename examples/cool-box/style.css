@@ -1,0 +1,91 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0 2em;
+    display: grid;
+    grid-template-rows: 300px auto;
+    grid-gap: 2em;
+
+    font-family: sans-serif;
+}
+
+nav, header, section, footer {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: .25em;
+}
+
+nav {
+    position: fixed;
+    width: calc(100% - 4em);
+
+    padding: 0 2em;
+
+    background-color: rgba(23, 23, 23, 0.4);
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+    z-index: 1;
+
+}
+
+header {
+    background-image: url(http://unsplash.it/1920/400);
+    background-attachment: fixed;
+
+    padding-top: 4em;
+    color: #fff;
+}
+
+section {
+    font-size: calc(1rem + 2vw);
+    /* min-height: 50vh; */
+}
+
+.box-text {
+    grid-column: 8 / 11;
+    grid-row: 1;
+    z-index: 1;
+}
+
+.box-text:hover ~ .cool-box {
+    border-color: yellow;
+}
+
+.box-text span {
+    display: block;
+}
+
+
+.cool-box {
+    grid-column: 9 / 12;
+    grid-row: 1;
+    
+    border: 5px solid #232323;
+    /* border-radius: 35px 0 0 0; */
+
+    position: relative;
+}
+
+.cool-box:hover {
+    border-color: yellow;
+}
+
+.cool-box::before {
+    position: absolute;
+    content: '';
+    background-color: red;
+    top: 15%;
+    bottom: 15%;
+    left: -5px;
+    width: 5px;
+
+}
+

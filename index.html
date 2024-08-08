@@ -1,11 +1,340 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>WIP</h1>
-</body>
+  <head>
+    <script src="jquery-3.6.0.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <title>Kalmar Fria Läroverk - Webbutveckling</title>
+  </head>
+
+  <body id="body">
+    <nav class="nav">
+      <div class="nav__wrapper">
+        <h1 class="nav__logo menu_white">Webbutveckling</h1>
+
+        <!-- <div> -->
+        <input type="checkbox" id="checkbox" class="nav__input nav__mobile" />
+        <label
+          for="checkbox"
+          class="label nav__button nav__mobile"
+          id="bars-left"
+        >
+          <!-- <img src="img/bars-solid.svg" alt="menu icon" class="nav__icon"> -->
+          <svg
+            id="svg"
+            class="nav__icon"
+            aria-hidden="true"
+            focusable="false"
+            data-prefix="fas"
+            data-icon="bars"
+            class="svg-inline--fa fa-bars fa-w-14"
+            role="img"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"
+          >
+            <path
+              fill="currentColor"
+              d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
+            ></path>
+          </svg>
+          <!-- https://fontawesome.com/icons/bars?style=solid -->
+        </label>
+
+        <ul class="nav__links" id="list">
+          <li class="nav__link">
+            <a
+              target="_blank"
+              href="https://sites.google.com/edu.laroverken.se/webweu01/startsida"
+              >Webbutveckling 1</a
+            >
+          </li>
+          <li class="nav__link">
+            <!-- <a
+              target="_blank"
+              href="https://sites.google.com/edu.laroverken.se/webweu02/startsida"
+              >Webbutveckling 2</a
+            > -->
+          </li>
+          <!-- <li class="nav__link">
+            <a target="_blank" href="https://classroom.google.com/"
+              >Classroom</a
+            >
+          </li> -->
+          <li class="nav__link">
+            <a target="_blank" href="examples/example.html">Exempel</a>
+          </li>
+          <li class="nav__link">
+            <a target="_blank" href="övningar/js_övningar/js_övningar.html"
+              >JavaScript</a
+            >
+          </li>
+          <li class="nav__link">
+            <a
+              target="_blank"
+              href="övningar/responsiv_övningar/responsiv_övningar.html"
+              >Responsivitet</a
+            >
+          </li>
+          <li class="nav__link">
+            <a
+              target="_blank"
+              href="övningar/var-lib_övningar/var-lib_övningar.html"
+              >Variabler och bibliotek</a
+            >
+          </li>
+          <!-- <li class="nav__link"><a href="#section__three">Tidigare</a></li> -->
+        </ul>
+        <!-- </div> -->
+      </div>
+    </nav>
+    <header class="header" id="header">
+      <div class="header__wrapper"></div>
+    </header>
+    <main>
+      <section class="section" id="section__one">
+        <div class="section__wrapper">
+          <!-- <h2 class="section__title">Webbutveckling 2, EE21</h2>
+          <a
+            href="http://ee21rc.friakalmar.se
+            "
+            class="card__link"
+            target="”_blank”"
+          >
+            <div class="section__card">
+              <h2 class="card__title">Rasmus Carlsson</h2>
+              <p class="card__text">ee21rc.friakalmar.se</p>
+            </div>
+          </a>
+          <a
+            href="http://ee21eg.friakalmar.se
+            "
+            class="card__link"
+            target="”_blank”"
+          >
+            <div class="section__card">
+              <h2 class="card__title">Elias Gunnarsson</h2>
+              <p class="card__text">ee21eg.friakalmar.se</p>
+            </div>
+          </a>
+          <a
+            href="http://ee21rg.friakalmar.se
+            "
+            class="card__link"
+            target="”_blank”"
+          >
+            <div class="section__card">
+              <h2 class="card__title">Robin Gunnarsson</h2>
+              <p class="card__text">ee21rg.friakalmar.se</p>
+            </div>
+          </a>
+          <a
+            href="http://ee21ji.friakalmar.se
+            "
+            class="card__link"
+            target="”_blank”"
+          >
+            <div class="section__card">
+              <h2 class="card__title">Jebril Ibrahim</h2>
+              <p class="card__text">ee21ji.friakalmar.se</p>
+            </div>
+          </a>
+          <a
+            href="http://ee21ij.friakalmar.se
+            "
+            class="card__link"
+            target="”_blank”"
+          >
+            <div class="section__card">
+              <h2 class="card__title">Isak Josefsson</h2>
+              <p class="card__text">ee21ij.friakalmar.se</p>
+            </div>
+          </a>
+          <a
+            href="http://ee21nl.friakalmar.se
+            "
+            class="card__link"
+            target="”_blank”"
+          >
+            <div class="section__card">
+              <h2 class="card__title">Norton Lindqvist</h2>
+              <p class="card__text">ee21nl.friakalmar.se</p>
+            </div>
+          </a>
+          <a
+            href="http://ee21lm.friakalmar.se
+            "
+            class="card__link"
+            target="”_blank”"
+          >
+            <div class="section__card">
+              <h2 class="card__title">Ludvig Mittbrodt</h2>
+              <p class="card__text">ee21lm.friakalmar.se</p>
+            </div>
+          </a>
+          <a
+            href="http://ee21an.friakalmar.se
+            "
+            class="card__link"
+            target="”_blank”"
+          >
+            <div class="section__card">
+              <h2 class="card__title">Arvid Nilsson</h2>
+              <p class="card__text">ee21an.friakalmar.se</p>
+            </div>
+          </a>
+          <a
+            href="http://ee21as.friakalmar.se
+            "
+            class="card__link"
+            target="”_blank”"
+          >
+            <div class="section__card">
+              <h2 class="card__title">Ali Sadik</h2>
+              <p class="card__text">ee21as.friakalmar.se</p>
+            </div>
+          </a>
+          <a
+            href="http://ee21vs.friakalmar.se
+            "
+            class="card__link"
+            target="”_blank”"
+          >
+            <div class="section__card">
+              <h2 class="card__title">Valter Stenholm</h2>
+              <p class="card__text">ee21vs.friakalmar.se</p>
+            </div>
+          </a>
+          <a
+            href="http://ee21wa.friakalmar.se
+            "
+            class="card__link"
+            target="”_blank”"
+          >
+            <div class="section__card">
+              <h2 class="card__title">Wilmer Åsenryd</h2>
+              <p class="card__text">ee21wa.friakalmar.se</p>
+            </div>
+          </a> -->
+        </div>
+      </section>
+      <section class="section" id="section__two">
+        <div class="section__wrapper">
+          <h2 class="section__title">Webbutveckling 1, EE22</h2>
+
+          <!-- <a
+            href="https://noha001.github.io/"
+            class="card__link"
+            target="”_blank”"
+          >
+            <div class="section__card">
+              <h2 class="card__title">Noah</h2>
+              <p class="card__text">noha001.github.io</p>
+            </div>
+          </a>
+          <a
+            href="https://hulliganen.github.io/"
+            class="card__link"
+            target="”_blank”"
+          >
+            <div class="section__card">
+              <h2 class="card__title">Victor</h2>
+              <p class="card__text">hulliganen.github.io</p>
+            </div>
+          </a>
+          <a
+            href="https://kusaialhasan.github.io"
+            class="card__link"
+            target="”_blank”"
+          >
+            <div class="section__card">
+              <h2 class="card__title">Kusai</h2>
+              <p class="card__text">kusaialhasan.github.io</p>
+            </div>
+          </a>
+          <a
+            href="https://jaydenfria.github.io/"
+            class="card__link"
+            target="”_blank”"
+          >
+            <div class="section__card">
+              <h2 class="card__title">Jayden</h2>
+              <p class="card__text">jaydenfria.github.io</p>
+            </div>
+          </a>
+          <a
+            href="https://kenta1234567.github.io/"
+            class="card__link"
+            target="”_blank”"
+          >
+            <div class="section__card">
+              <h2 class="card__title">Kenta</h2>
+              <p class="card__text">kenta1234567.github.io</p>
+            </div>
+          </a>
+          <a
+            href="https://alih-fria.github.io/"
+            class="card__link"
+            target="”_blank”"
+          >
+            <div class="section__card">
+              <h2 class="card__title">Ali</h2>
+              <p class="card__text">alih-fria.github.io</p>
+            </div>
+          </a>
+          <a
+            href="https://cabben0six.github.io/"
+            class="card__link"
+            target="”_blank”"
+          >
+            <div class="section__card">
+              <h2 class="card__title">Casper</h2>
+              <p class="card__text">cabben0six.github.io</p>
+            </div>
+          </a>
+          <a
+            href="https://xdzerdo.github.io"
+            class="card__link"
+            target="”_blank”"
+          >
+            <div class="section__card">
+              <h2 class="card__title">Elias</h2>
+              <p class="card__text">xdzerdo.github.io</p>
+            </div>
+          </a>
+          <a
+            href="https://abnhalab777.github.io/"
+            class="card__link"
+            target="”_blank”"
+          >
+            <div class="section__card">
+              <h2 class="card__title">Mohamad</h2>
+              <p class="card__text">abnhalab777.github.io</p>
+            </div>
+          </a>
+          <a
+            href="https://humi04.github.io/"
+            class="card__link"
+            target="”_blank”"
+          >
+            <div class="section__card">
+              <h2 class="card__title">Hubert</h2>
+              <p class="card__text">humi04.github.io</p>
+            </div>
+          </a> -->
+        </div>
+      </section>
+    </main>
+    <script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="js/script.js"></script>
+  </body>
 </html>

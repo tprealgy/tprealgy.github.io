@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <h1>Rubrik</h1>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut nobis,
+        assumenda modi fugiat eos cupiditate atque porro cum doloremque.
+        Incidunt vitae facilis eum enim perferendis cumque sit voluptate est
+        quas.
+      </p>
+      <p id="click">Click Me!</p>
+    </main>
+    <div id="popup">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex error nisi
+        nam mollitia blanditiis. Consequuntur in quisquam, facilis rerum
+        suscipit voluptatum perspiciatis optio animi itaque. Voluptatum, minima
+        id? Perferendis, velit? Exercitationem placeat ullam magni laboriosam,
+        saepe sed neque, adipisci maiores provident eum, corporis rerum.
+        Asperiores nobis, ipsum blanditiis officiis enim eaque dolorum ratione
+        quae laudantium non inventore, voluptas, iste minus. Eligendi maiores,
+        ipsam eveniet quisquam natus numquam architecto possimus repellendus
+        veritatis enim reiciendis? Nobis obcaecati, accusantium velit distinctio
+        doloremque ipsum amet eius nemo saepe perferendis, architecto sed, fugit
+        dolores eos. Similique provident perferendis nulla corrupti ipsam sequi
+        quas vitae, quam molestias facilis aliquam velit ea odio eligendi unde
+        recusandae veritatis magni? Sequi quo repudiandae quidem magnam quaerat
+        unde voluptas fugit? Libero, sed magni atque iure aperiam eius ea
+        incidunt earum dolorum excepturi doloremque ratione quos nesciunt soluta
+        fugiat.
+      </p>
+    </div>
+    <script>
+      const show = document.getElementById("click");
+      const popup = document.getElementById("popup");
+
+      show.addEventListener("click", displayArea);
+
+      function displayArea() {
+        if (popup.style.top == "100%") {
+          popup.style.top = "0";
+        } else {
+          popup.style.top = "100%";
+        }
+      }
+
+      //   function displayArea() {
+      //     if (popup.style.display === "none") {
+      //       popup.style.display = "block";
+      //     } else {
+      //       popup.style.display = "none";
+      //     }
+      //   }
+    </script>
+  </body>
+</html>

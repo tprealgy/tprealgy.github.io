@@ -1,0 +1,39 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, ul {
+    font-family: 'Noto Serif', serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.menu_white {
+    color: #fff;
+   }
+   
+.menu_black {
+    color: #232323;
+}
+
+
+
+.header__link {
+    color: #fff;
+
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    // Gör texten läsbar, men är det snyggt? 
+
+
+    &:hover {
+        color: #d4d4d4;
+    }
+}
+
+
+.section__title:first-of-type {
+    margin-top: 0;
+}

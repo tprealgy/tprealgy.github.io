@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  background-color: lightskyblue;
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+
+  display: grid;
+  grid: auto / minmax(1em, 3em) 1fr 1fr minmax(1em, 3em);
+}
+
+.logo {
+  grid-column: 2 / span 1;
+}
+
+.nav-toggle {
+  display: none;
+}
+.nav-toggle:checked ~ nav {
+  display: block;
+}
+
+nav {
+  position: absolute;
+  text-align: right;
+
+  top: 100%;
+  right: 0;
+  background-color: lightskyblue;
+  width: 100%;
+
+  display: none;
+  transition: ease 500ms;
+}
+
+nav ul {
+  margin: 1em;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  margin-bottom: 1em;
+  margin-right: 1em;
+
+  display: inline;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+nav a:hover {
+  color: lightslategray;
+}
+
+.icons {
+  grid-column: 3 / span 1;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-toggle-lable {
+  margin-right: 1em;
+
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-toggle-lable span,
+.nav-toggle-lable span::before,
+.nav-toggle-lable span::after {
+  display: block;
+  background: #fff;
+
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+
+  position: relative;
+}
+
+.nav-toggle-lable span::before,
+.nav-toggle-lable span::after {
+  content: "";
+  position: absolute;
+}
+
+.nav-toggle-lable span::before {
+  bottom: 7px;
+}
+
+.nav-toggle-lable span::after {
+  top: 7px;
+  width: 1em;
+}

@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+}
+
+#menu_toggle {
+    display: none;
+}
+label {
+    position: absolute;
+    z-index: 99;
+}
+
+#menu_toggle:checked ~ .menu {
+    left: 0;
+}
+
+body {
+    margin: 0;
+}
+
+svg {
+    width: 70px;
+}
+
+nav {
+    background-color: lightblue;
+    height: 80px;
+}
+
+.menu {
+    background-color: coral;
+    position: absolute;
+    left: -50vw;
+    height: 100vh;
+    width: 50vw;
+    top: 0;
+
+    transition: ease-in-out 250ms;
+    padding: 6em 2em;
+}
+
+main {
+    background-color: lightgreen;
+    height: 50vh;
+}

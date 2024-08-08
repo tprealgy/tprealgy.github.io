@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TEST</title>
+    <style>
+      .gradient {
+        position: relative;
+        min-height: 200px;
+        background-image: linear-gradient(
+          to right,
+          hsl(211, 100%, 50%),
+          hsl(179, 100%, 30%)
+        );
+        z-index: 1;
+      }
+
+      .gradient::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: linear-gradient(
+          to bottom,
+          hsl(344, 100%, 50%),
+          hsl(31, 100%, 40%)
+        );
+        z-index: -1;
+        transition: opacity 0.5s linear;
+        opacity: 0;
+      }
+      .gradient:hover::before {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="gradient">
+      <a href="#">test to verify content remains visible & on top</a>
+    </div>
+    Hover over the element above to fade the background gradient.
+  </body>
+</html>

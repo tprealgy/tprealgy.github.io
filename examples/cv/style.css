@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    
+    background-color: grey;
+}
+
+main {
+    background-color: lightblue;
+
+    margin: 1em auto;
+    height: 95vh; width: 70%;
+
+    display: grid;
+    grid: auto / 1fr 2fr;
+}
+
+aside {
+    position: relative;
+}
+
+aside::after {
+    content: '';
+    position: absolute;
+    top: 10%; right: 0; bottom: 10%;
+    
+    height: 80%;
+    border-left: 2px solid grey; 
+}
+
+section {
+
+}
+
+aside, section {
+    padding: 10%;
+}
+
+.card {
+        border-radius: 2px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+  }

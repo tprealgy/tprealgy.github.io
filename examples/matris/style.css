@@ -1,0 +1,95 @@
+table {
+  /* border: 1px solid black; */
+}
+
+tbody {
+}
+
+tr {
+}
+
+td {
+  border: 1px solid black;
+  /* padding: 1em; */
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.td--header {
+  background-color: lightblue;
+  font-weight: bold;
+}
+
+.test {
+  display: grid;
+  grid: repeat(4, 1fr) / auto 1fr;
+  /* grid-gap: 2px; */
+  position: relative;
+}
+
+.text {
+  grid-row: 1 / -1;
+  grid-column: 2;
+  padding: 1em;
+}
+
+/* .red,
+.white,
+.yellow,
+.green {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  grid-column: 1;
+} */
+
+input {
+  margin: 10px;
+  z-index: 9;
+}
+
+.red,
+.white,
+.yellow,
+.green {
+  position: absolute;
+  height: 32px;
+  width: 32px;
+  top: 0;
+  left: 0;
+}
+
+.red {
+  border: 1px solid red;
+}
+
+.white {
+  top: 32px;
+}
+.yellow {
+  background: yellow;
+  top: 64px;
+}
+.green {
+  background: lightgreen;
+  top: 96px;
+}
+
+#red:checked ~ .text {
+  background-color: red;
+}
+#white:checked ~ .text {
+  background-color: white;
+}
+#yellow:checked ~ .text {
+  background-color: yellow;
+}
+#green:checked ~ .text {
+  background-color: lightgreen;
+}

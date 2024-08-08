@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap");
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.transition {
+  transition: ease-in-out 500ms;
+}
+
+a {
+  text-decoration: none;
+  color: #364149;
+}
+
+nav a {
+  width: 100%;
+  display: block;
+  height: 100%;
+  padding: 10px;
+}
+
+a:hover {
+  color: lightskyblue;
+  font-weight: bold;
+}
+
+/* === LISTA === */
+/* ol {
+  counter-reset: item;
+  padding: ;
+  width: 90%;
+  margin: 1em auto 0 auto;
+}
+.ol__padding {
+  padding: 0;
+}
+li {
+  display: block;
+  padding: 10px;
+
+  outline: 1px solid yellow;
+}
+
+li a {
+  background-color: red;
+  width: 100px;
+  height: 100%;
+}
+
+li:before {
+  content: counters(item, ".") " ";
+  counter-increment: item;
+  font-weight: bold;
+}
+
+li ol {
+  padding-left: 10px;
+} */
+
+nav ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+nav ul ul {
+  padding-left: 25px;
+}
+
+nav ul li {
+  /* padding: 10px; */
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+aside {
+  background-color: #fafafa;
+  color: #364149;
+  text-transform: capitalize;
+  font-size: 14px;
+
+  transform: translateX(0);
+
+  width: 300px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  overflow-y: scroll;
+}
+
+aside nav {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  width: calc(100vw - 300px);
+  margin-left: 300px;
+  display: grid;
+  grid: 50px repeat(2, 100vh) / 1fr;
+}
+
+header {
+  position: relative;
+}
+
+.header--wrapper {
+  position: fixed;
+  width: 100%;
+  height: 50px;
+
+  border-bottom: 1px solid lightgray;
+  box-shadow: 0 0 1px black;
+  background-color: #fff;
+}
+
+.test {
+  display: none;
+}
+
+.label-toggle {
+  position: fixed;
+  left: 305px;
+  z-index: 99;
+  padding: 0.3em;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.label-toggle svg {
+  opacity: 0.6;
+}
+
+.test:checked ~ .label-toggle {
+  left: 10px;
+}
+
+.test:checked ~ .wrapper {
+  /* grid: auto / 0px 1fr; */
+}
+
+.test:checked ~ .wrapper aside {
+  transform: translateX(-100%);
+  /* display: block; */
+  /* Funkar inte med animationen */
+
+  overflow: hidden;
+}
+
+.test:checked ~ .wrapper main {
+  width: 100vw;
+  margin: 0;
+}
+
+section {
+  /* background-image: linear-gradient(white, black); */
+}

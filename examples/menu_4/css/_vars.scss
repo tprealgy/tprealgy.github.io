@@ -1,0 +1,16 @@
+$colors: (
+  aside: #fafafa,
+  link: #29b6f6,
+  f-color: #323232,
+  h3: #ff5722,
+  tag-bg: #eeeeee,
+  tag-border:
+    rgba(
+      $color: #000000,
+      $alpha: 0.25
+    )
+);
+$font: (
+  heading: "Caladea",
+  body: "Roboto"
+);

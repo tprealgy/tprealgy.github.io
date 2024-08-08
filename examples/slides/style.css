@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+}
+
+section {
+    height: 100vh;
+    width: 100%;
+    z-index: 0;
+  }
+
+  #slide1 {
+      background-color: lightblue;
+  }
+  #slide2 {
+      background-color: lightcoral;
+  }
+  #slide3 {
+      background-color: lightcyan;
+  }
+  #slide4 {
+      background-color: lightgoldenrodyellow;
+  }
+  #slide5 {
+      background-color: lightgreen;
+  }

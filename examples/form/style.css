@@ -1,0 +1,33 @@
+form {
+  display: flex;
+  flex-wrap: wrap;
+}
+form > input {
+  flex: 1 1 10ch;
+  margin: 0.5rem;
+}
+input[type="email"] {
+  flex: 3 1 30ch;
+}
+
+/* ============
+STIL FÖR SIDAN
+============ */
+
+body {
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
+}
+
+input {
+  border: none;
+  background: hsl(0 0% 93%);
+  border-radius: 0.25rem;
+  padding: 0.75rem 1rem;
+}
+input[type="submit"] {
+  background: hotpink;
+  color: white;
+  box-shadow: 0 0.75rem 0.5rem -0.5rem hsl(0 50% 80%);
+}

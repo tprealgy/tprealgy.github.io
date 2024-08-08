@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+a {
+  font-family: "Roboto Slab", serif;
+}
+
+span {
+  font-weight: 900;
+}
+p {
+  line-height: 1.6;
+  font-size: 1.2rem;
+}
+img {
+  width: 50px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #fafafa;
+  color: #232323;
+}
+
+.wrapper {
+  background-color: #fff;
+  /* background-color: red; */
+  margin: 0 auto;
+  width: 70vw;
+  text-align: center;
+  padding: 5rem 2.5rem;
+  box-shadow: 3px 3px 10px #dadada;
+}
+
+.heading {
+  margin: 0;
+}
+
+.heading-2 {
+  margin-bottom: 5rem;
+}
+
+.övningar > * {
+  border-top: 3px dashed #232323;
+  border-bottom: 3px dashed #232323;
+  margin: 2rem 0;
+  padding: 2rem;
+  display: flex;
+  gap: 2rem;
+}
+
+h3 {
+  flex-shrink: 0;
+}
+
+img {
+  transition: all 0.3s ease-in-out;
+}

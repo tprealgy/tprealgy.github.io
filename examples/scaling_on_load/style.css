@@ -1,0 +1,81 @@
+* {
+    transition: ease-in-out 500ms;
+}
+html, body {
+    height: 100%;
+}
+
+
+
+body {
+    margin: 0;
+    background-image: url("jungle-on-white-background-free-vector.jpg");
+
+
+}
+
+body::after {
+    animation: fade 1s;
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    opacity: 0.6;
+    z-index: -1;
+    
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+  
+    100% {
+        opacity: .6;
+    }
+  }
+
+
+  
+
+
+
+main {
+    opacity: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main > * {
+    padding: 2em;
+}
+
+img {
+    width: 25%;
+    /* height: 50%; */
+}
+
+
+a {
+    opacity: 1;
+    animation: next 4s;
+}
+
+@keyframes next {
+    0% {
+        opacity: 0;
+    }
+    
+    50% {
+        opacity: 0;
+    }
+  
+    100% {
+        opacity: 1;
+    }
+  }

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Övning 3</title>
+    <style>
+      div {
+        width: 250px;
+        aspect-ratio: 1;
+        background-color: lightcoral;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <button>Click!</button>
+    </div>
+
+    <script>
+      const button = document.querySelector("button");
+      const div = document.querySelector("div");
+
+      //   Här ser du en eventlistner, precis som i förra övningen. Innuti funktionen ser du en if-sats, som kollar om något stämmer. Om det stämmer så kommer koden att utföras. Om det inte stämmer så kommer koden att hoppa över if-satsen och gå vidare till else-satsen.
+
+      //   Skriv din kod, så att den kollar bakgrundsfärgen på div-elementet. Om den är lightcoral så ska den ändras till lightblue. Om den inte är lightcoral så ska den ändras till lightcoral.
+
+      button.addEventListener("click", () => {
+        if (div.style.backgroundColor === "lightcoral") {
+          // skriv kod här
+        } else {
+          //   skriv kod här
+        }
+      });
+    </script>
+  </body>
+</html>

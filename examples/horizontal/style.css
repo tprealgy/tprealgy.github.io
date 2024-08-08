@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #232323;
+}
+
+h1,
+h2,
+h3,
+ul {
+  font-family: "Noto Serif", serif;
+  margin-bottom: 1em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  line-height: 1.5;
+  margin-bottom: 2em;
+}
+
+@media screen and (max-width: 600px) {
+  p {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 600px) {
+  main {
+    flex-flow: column;
+    width: 100vw !important;
+  }
+  .section {
+    padding: 8em 2em;
+    flex-flow: column;
+    height: auto !important;
+  }
+  .section a {
+    display: none;
+  }
+}
+.wrapper {
+  flex-flow: column;
+}
+
+.flex {
+  display: flex;
+}
+.flex__jc--c {
+  justify-content: center;
+}
+.flex__jc--fs {
+  justify-content: flex-start;
+}
+.flex__jc--fe {
+  justify-content: flex-end;
+}
+.flex__ai--c {
+  align-items: center;
+}
+.flex__ai--fs {
+  align-items: flex-start;
+}
+.flex__ai--fe {
+  align-items: flex-end;
+}
+
+main {
+  background-color: crimson;
+  height: 100%;
+  width: 300vw;
+  display: flex;
+}
+
+.section {
+  background-image: linear-gradient(45deg, #d9afd9 0%, #97d9e1 100%);
+  background-attachment: fixed;
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  justify-content: flex-end;
+}
+.section__scroll {
+  height: 100%;
+  width: 7vw;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.section__scroll::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+  z-index: -1;
+  transition: opacity 0.5s linear;
+  opacity: 0;
+}
+.section__scroll:hover::before {
+  opacity: 1;
+}
+
+#section2 {
+  background-color: #fbab7e;
+  background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
+}
+
+#section3 {
+  background-color: #fbda61;
+  background-image: linear-gradient(45deg, #fbda61 0%, #ff5acd 100%);
+}
+
+.article {
+  display: flex;
+  flex: 1 1 0;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+.article__text {
+  max-width: 700px;
+}
+.article__imgbox {
+  padding: 2em;
+  border: 2px solid;
+  margin-bottom: 2em;
+}
+
+.wrapper {
+  display: flex;
+  max-width: 700px;
+}
+.wrapper__text {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}/*# sourceMappingURL=style.css.map */

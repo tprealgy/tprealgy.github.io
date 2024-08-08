@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+}
+
+p, h1, h2 {
+    font-family: sans-serif;
+}
+
+.main {
+    border: 1px solid black;
+
+    margin-bottom: 5em;
+
+}
+
+main {
+    height: 500px; width: 500px;
+    margin: 0 auto;
+
+    background-color: lightskyblue;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+
+    z-index: 1;
+
+}
+
+.main--text {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+
+    height: 250px; width: 250px;
+    margin: 0 auto;
+
+    text-align: center;
+
+    z-index: 2;
+}
+
+.main--text:hover ~ main {
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+}
+
+
+.image {
+    border: 1px solid red;
+
+    margin-bottom: 5em;
+}
+
+.image p {
+    position: absolute;
+    left: 0; right: 0;
+
+    height: 250px; width: 250px;
+    margin: 0 auto;
+
+    text-align: center;
+
+    z-index: 2;
+}
+
+.image section {
+    width: 500px; height: 500px;
+    margin: 0 auto;
+    
+    background: url(500.jpeg);
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+
+    z-index: 1;
+
+    
+}
+
+.image p:hover ~ section {
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+}
+
+
+
+
+.no-text {
+    border: 1px solid green;
+
+    margin-bottom: 5em;
+}
+
+.no-text section {
+    width: 500px; height: 500px;
+    margin: 0 auto;
+    
+    background: url(500.jpeg);
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+
+    z-index: 1;
+
+    
+}
+
+.no-text section:hover {
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+
+    width: 600px; height: 600px;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    transition: ease-in-out 500ms;
+}
+
+
+.form {
+    border: 1px solid yellow;
+}
+
+.box {
+    display: grid;
+    grid: 100px 300px 100px / auto;
+
+    width: 500px; height: 500px;
+
+    margin: 0 auto;
+}
+
+.one {
+    background-color: red;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.two {
+    background-color: green;
+}
+
+.three {
+    background-color: blue;
+    border-radius: 0px 0px 10px 10px;
+
+}

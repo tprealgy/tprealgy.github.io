@@ -1,0 +1,51 @@
+/* Extra small devices (phones, 600px and down) */
+body {
+    background: lightblue;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+}
+header {
+    background: #232323;
+    width: 100%;
+}
+body > div {
+    flex: 1 1 400px;
+    padding: 1em;
+    margin: 1em;
+    border: 2px solid #232323;
+}
+.col-1 {
+    
+}
+.col-2 {
+    
+}
+.col-3 {
+    
+}
+.col-4 {
+    
+}
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    body {
+        background: lightcoral;
+    } 
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    body {
+        background: lightcyan;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    body {
+        background: lightgreen;
+    }
+}

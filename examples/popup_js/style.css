@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: lightblue;
+  position: relative;
+}
+
+#popup {
+  position: absolute;
+  background-color: lightcoral;
+  width: 50vw;
+  /* height: 500px; */
+  aspect-ratio: 1 / 1;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: ease-in-out 250ms;
+  /* display: none; */
+}

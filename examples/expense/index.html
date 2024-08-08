@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expenses</title>
+</head>
+<body>
+    <div id="container">
+        <input type="date" id="dateInput">
+
+        <select id="type">
+            <option disabled selected value="">Please select an Option</option>
+            <option value="Food">Food</option>
+            <option value="Clothing">Clothing</option>
+            <option value="Transport">Transport</option>
+            <option value="Dept">Dept</option>
+            <option value="Education">Education</option>
+            <option value="Misc">Misc</option>
+        </select>
+        <input type="number" placeholder="Amount" id="amountInput">
+        <input type="text" placeholder="Desc" id="descInput">
+        <button id="button" class="btn btn-primary">Add Expense</button>
+    </div>
+
+    <div id="table-container">
+        <table id="table">
+            <tr>
+                <th>Date</th>
+                <th>Type</th>
+                <th>Amount</th>
+                <th>Desc</th>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        let button = document.getElementById('button');
+        let DATE = document.getElementById('dateInput');
+        let AMOUNT = document.getElementById('amountInput')
+        let DESC = document.getElementById('descInput')
+        let TYPE = document.getElementById('type')
+        let table = document.getElementById('table')
+        let class_name;
+        let expense_records = []; //for local storage
+
+        if (localStorage.getItem('expense_records')) {
+            expense_records = JSON.parse(localStorage.getItem('expense_records'))
+            renderTable()
+        }
+
+        let inputs = [DATE, AMOUNT, DESC]
+
+        function add_expense(date = 'N/A', type = 'N/A', amount = 'N/A', desc = 'N/A') {
+            let DATE_OBJECT = new Date(DATE.value)
+            let FORMATTED_DATE = DATE_OBJECT.toLocaleDateString('en-US', {month: '2-digit', day: '2-digit', year: 'numeric'})
+
+            date = FORMATTED_DATE
+            type = TYPE.value
+            amount = AMOUNT.value
+            desc = DESC.value
+
+            switch(TYPE.value) {
+                case 'Food':
+                    class_name = 'food';
+                break;
+                case 'Clothing':
+                    class_name = 'clothing'
+                break;
+                case 'Transportation':
+                    class_name = 'transportation';
+                break;
+                case 'Debt':
+                    class_name = 'dept';
+                break;
+                case 'Education':
+                    class_name = 'education';
+                break;
+                case 'Misc':
+                    class_name = 'misc';
+                break;
+            }
+
+            expense_records.push({date,type,amount,desc,class_name})
+            updateLocalStorage()
+            renderTable();
+        }
+
+        function delete_expense(index) {
+            expense_records.splice(index, 1)
+            updateLocalStorage()
+            renderTable()
+        }
+
+        function renderTable() {
+            table.innerHTML = `<tr>
+                                <th>Date</th>
+                                <th>Type</th>
+                                <th>Amount</th>
+                                <th>Desc</th>
+                                <th>Action</th>
+                            </tr>`
+
+            expense_records.forEach((expense, index) => {
+                let color_code = expense.class_name
+                
+                table.innerHTML += `<tr>
+                                    <td class = "${color_code}">${expense.date}</td>
+                                    <td class = "${color_code}">${expense.type}</td>
+                                    <td class = "${color_code}">${expense.amount}</td>
+                                    <td class = "${color_code}">${expense.desc}</td>
+                                    <td class = "${color_code}">
+                                        <button onclick = "delete_expense(${index})" class = "btn btn-primary btn-sm">Delete</button>
+                                    </td>
+                                </tr>`
+            })
+        }
+
+        function updateLocalStorage() {
+            localStorage.setItem('expense_records', JSON.stringify(expense_records));
+        }
+        button.addEventListener('click', add_expense)
+
+    </script>
+</body>
+</html>
+
+<!-- https://www.youtube.com/watch?v=XpQs42nWvOM -->

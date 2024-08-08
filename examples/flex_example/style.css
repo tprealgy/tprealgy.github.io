@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  /* */
+  font-family: "Roboto", sans-serif;
+}
+
+section {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card,
+aside {
+  width: 25vw;
+  aspect-ratio: 1 / 1;
+}
+
+.card {
+  background-color: #fff;
+
+  border-radius: 10px;
+  border: 1px solid #232323;
+  display: flex;
+  padding: 5px;
+}
+
+.box {
+  width: 50px;
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.flex_oneElement {
+  background-color: #2ec4b6;
+  color: #fff;
+}
+
+.flex_twoElements {
+  background-color: #ff9f1c;
+  color: #fff;
+}
+
+.flex_oneElement .box {
+  background-color: #2ec4b6;
+}
+
+.flex_twoElements .box {
+  background-color: #ff9f1c;
+}

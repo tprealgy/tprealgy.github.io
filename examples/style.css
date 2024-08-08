@@ -1,0 +1,130 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+a {
+  color: #fff;
+  font-size: 20px;
+}
+
+p {
+  line-height: 1.6;
+}
+
+.index span {
+  margin: 0 0.5em 0.5em 0.5em;
+  padding: 0.2em 0.5em;
+  text-transform: lowercase;
+  border: 1px solid #aaa;
+  border-radius: 100vw;
+}
+
+li span {
+  display: block;
+  font-style: italic;
+  color: #aaa;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+h1,
+h2 {
+  font-family: "Roboto Slab", serif;
+}
+
+li {
+  padding: 0.5em;
+}
+li:hover a,
+li:hover span {
+  color: rgb(247, 102, 102);
+}
+
+body {
+  margin: 0;
+  padding: 1em;
+  color: #fff;
+  background-color: rgba(0, 69, 158, 1);
+  background-image: url("wave-haikei.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: "Roboto", sans-serif;
+}
+
+main {
+  width: 80%;
+  margin: 0 auto;
+  padding: 1em;
+  border-radius: 8px;
+  background-color: rgba(23, 23, 23, 0.5);
+  backdrop-filter: blur(7px);
+
+  display: grid;
+  grid: auto / 1fr 1fr;
+  gap: 1em 2em;
+
+  animation-name: slide;
+  animation-duration: 0.5s;
+
+  position: relative;
+  /* top: 70%; */
+}
+
+/* The animation code */
+@keyframes slide {
+  from {
+    top: 30%;
+  }
+  to {
+    top: 0;
+  }
+}
+
+.index {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main__heading {
+  grid-column: 1 / -1;
+}
+
+.main__heading h1,
+h2 {
+  border-bottom: 3px solid #fff;
+}
+
+.area-other {
+  grid-column: 1 / -1;
+
+}
+
+.area-other h2 {
+  grid-column: 1 / -1;
+}
+
+.area-other ul {
+  display: grid;
+  grid: auto / 1fr 1fr;
+  column-gap: 5em;
+}
+
+@media only screen and (max-width: 700px) {
+  main {
+    width: 90%;
+    gap: 1em;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  main {
+    width: 95%;
+    grid: auto / 1fr;
+  }
+}

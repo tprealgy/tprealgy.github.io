@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+img {
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Pacifico", cursive;
+  overflow-x: hidden;
+}
+
+header {
+  background-image: url(img/bg.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 40vh;
+}
+
+header h1 {
+  font-size: 52px;
+}
+nav {
+  background-color: rgba(23, 23, 23, 0.5);
+  width: 100vw;
+  padding: 1em 0;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+nav a:hover {
+  color: palevioletred;
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li + * {
+  margin-left: 2em;
+}
+
+main {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.bunny {
+  padding-bottom: 2em;
+}
+
+.bunny_collage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+}
+.bunny_collage .border {
+  border: 1px solid #232323;
+}
+
+.pink {
+  background-color: #fed5d9;
+  padding: 3em;
+  width: 100vw;
+  margin-left: -35%;
+  text-align: center;
+}
+
+.pink_collage {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2em;
+}
+
+.pink_collage .wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.pink_collage img {
+  object-fit: cover;
+  border: 3px solid #fff;
+  box-shadow: 8px 8px 20px #23232381;
+  height: 400px;
+}
+
+.pink_collage-desc {
+  position: absolute;
+  z-index: 99;
+  width: 100%;
+  height: calc(100% - 8px);
+  left: 0;
+  top: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+  transition: ease-in-out 250ms;
+}
+
+.pink_collage .wrapper:hover .pink_collage-desc {
+  top: 0;
+}
+
+.pink_collage-desc p {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.pink article {
+  display: grid;
+  grid: auto 1fr / 500px 1fr;
+  gap: 1em;
+  padding: 5em;
+  text-align: left;
+}
+
+.pink article .wrapper {
+  grid-column: 1;
+  grid-row: 1 / -1;
+}
+
+.pink article h3 {
+  grid-column: 2;
+  grid-row: 1 / 2;
+}
+
+footer {
+  padding: 3em;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+}
+
+.socials > * {
+  flex-basis: 25px;
+  margin-right: 2em;
+}

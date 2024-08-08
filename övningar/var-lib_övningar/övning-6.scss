@@ -1,0 +1,35 @@
+$bg-c: rgb(253, 60, 60);
+// Vaiabel i SASS-stil
+
+body {
+  margin: 0;
+  div {
+    // När är en nestad selektor. Detta är en selektor som är inuti en annan selektor. Här väljs alla div-element som är inuti body-elementet.
+
+    width: 50vw;
+    background-color: $bg-c;
+    // Här används den tidigare vaiabel
+
+    margin: 0 auto;
+    padding: 5rem;
+  }
+}
+
+.intro {
+  p {
+    // När är en nestad selektor. Detta är en selektor som är inuti en annan selektor. Här väljs alla div-element som är inuti body-elementet.
+    font-size: 2rem;
+  }
+}
+
+.instruktioner {
+  li {
+    // När är en nestad selektor. Detta är en selektor som är inuti en annan selektor. Här väljs alla div-element som är inuti body-elementet.
+    font-size: 1.5rem;
+
+    &:hover {
+      // Här hämtar vi den överliggande selektorn. Detta är en pseudo-klass som används för att skapa en hover-effekt. CSSen som genereras av detta blir "li:hover".
+      font-weight: bold;
+    }
+  }
+}

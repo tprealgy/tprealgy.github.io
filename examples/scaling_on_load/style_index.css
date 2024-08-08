@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background-image: url(jungle-on-white-background-free-vector.jpg);
+}
+
+.header {
+    background-color: rgba(255, 255, 255, .9);
+    display: inline-block;
+    padding: 2em 7em;
+    margin: 5em 0;
+}
+a {
+    font-size: 52px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
