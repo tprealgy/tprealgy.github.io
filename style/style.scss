@@ -11,6 +11,15 @@ body {
   grid: 4.375rem 50vh 1fr / auto;
 }
 
+svg {
+  height: 2rem;
+}
+.test-bg {
+  background-color: rgba(23, 23, 23, 0.8);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+
 .nav {
   position: relative;
 
@@ -26,6 +35,7 @@ body {
     position: fixed;
 
     z-index: 99;
+    transition: ease-in-out 150ms;
   }
 
   &__links {
@@ -65,7 +75,6 @@ body {
   height: 3px;
   left: 0;
   right: 0;
-  // width: 26px;
   border-radius: 2px;
   background-color: #232323;
 }
@@ -95,7 +104,6 @@ body {
     left: 10%;
     z-index: 99;
 
-    // filter: invert(100) !important;
     color: #fff !important;
   }
 
@@ -155,9 +163,6 @@ body {
   }
 }
 
-// main {
-// }
-
 .section {
   padding: 2em;
 
@@ -165,19 +170,28 @@ body {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
+    // min-height: 33vw;
+  }
+
+  &__title {
+    flex: 1 1 100%;
+
+    border-bottom: 2px solid #232323;
+    height: min-content;
+    padding: 2em 0 1em;
   }
 
   &__card {
     padding: 0.5em 1em;
     margin-bottom: 0.5em;
+    min-width: 20vw;
 
     display: flex;
     justify-content: center;
     align-items: center;
     flex-flow: column;
 
-    position: relative;
-    flex: 1 1 0;
+    transition: ease-in-out 250ms;
 
     &:hover {
       border-radius: 25px;
@@ -188,44 +202,26 @@ body {
       }
     }
   }
+}
+.footer {
+  background-color: #232323;
+  color: #fff;
+  padding: 1em 4em;
+  display: flex;
+  margin-top: 4em;
 
-  .card__bg {
-    display: none;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: 20px;
-    background-image: url(../img/card__bg.jpg);
-    background-size: cover;
-    background-position: left 10%;
-    // border-radius: 0 0 35px 35px;
+  & > *:nth-child(2n) {
+    border-left: 2px solid #ffffff75;
+    border-right: 2px solid #ffffff75;
+  }
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 1em;
   }
 
-  // iframe {
-  //     height: 200px;
-  //     width: 200px;
-  //     overflow: hidden;
-  // }
-
-  &__title {
-    flex: 1 1 100%;
-
-    padding-bottom: 0.5em;
-
-    border-bottom: 2px solid #232323;
+  &__link {
+    text-decoration: underline;
   }
-}
-
-// .card__title {
-//   margin-bottom: 0;
-// }
-
-.test-bg {
-  background-color: rgba(23, 23, 23, 0.8);
-  backdrop-filter: blur(10px);
-}
-
-svg {
-  height: 2rem;
 }
