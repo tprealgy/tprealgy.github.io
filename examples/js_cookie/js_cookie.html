@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        font-family: sans-serif;
+        font-size: 1.5rem;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .box {
+        width: 35%;
+        aspect-ratio: 1;
+        background-color: lightcoral;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <p>Your number: <span></span></p>
+      <div class="wrapper">
+        <button class="btn__increase">Increase (+)</button>
+        <button class="btn__decrease">Decrease (-)</button>
+      </div>
+    </div>
+
+    <script>
+      var counter = document.querySelector("span");
+      var increase = document.querySelector(".btn__increase");
+      var decrease = document.querySelector(".btn__decrease");
+
+      window.addEventListener("load", function () {
+        var cookieVal = getCookie("cookieVal");
+        if (cookieVal) {
+          console.log("Value of cookieVal:", cookieVal);
+        } else {
+          cookieVal = 0;
+          setCookie("cookieVal", cookieVal);
+          console.log("Cookie created");
+        }
+      });
+
+      function setCookie(name, value) {
+        document.cookie =
+          name +
+          "=" +
+          value +
+          "; path=/" +
+          "; expires=Thu, 18 Dec 2028 12:00:00 UTC";
+      }
+
+      function getCookie(name) {
+        var cookieArr = document.cookie.split(";");
+        for (var i = 0; i < cookieArr.length; i++) {
+          var cookiePair = cookieArr[i].split("=");
+          var cookieName = cookiePair[0].trim();
+          if (cookieName === name) {
+            return cookiePair[1];
+          }
+        }
+        return null;
+      }
+
+      counter.innerHTML = getCookie("cookieVal");
+
+      increase.addEventListener("click", function () {
+        var cookieVal = parseInt(getCookie("cookieVal"));
+        cookieVal++;
+        setCookie("cookieVal", cookieVal);
+        counter.innerHTML = cookieVal;
+      });
+
+      decrease.addEventListener("click", function () {
+        var cookieVal = parseInt(getCookie("cookieVal"));
+        cookieVal--;
+        setCookie("cookieVal", cookieVal);
+        counter.innerHTML = cookieVal;
+      });
+    </script>
+  </body>
+</html>
