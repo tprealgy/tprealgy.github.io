@@ -1,0 +1,14 @@
+{
+  "languages": {
+      "english": {
+          "heading": "Welcome to the website",
+          "text": "Text på engelska",
+          "test": "Engelska Test"
+      },
+      "swedish": {
+          "heading": "Välkommen till webbplatsen",
+          "text": "Text på svenska",
+          "test": "Svenska Test"
+      }
+  }
+}
