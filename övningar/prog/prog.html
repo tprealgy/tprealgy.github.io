@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+      <header class="header">
+        <h1 class="header__heading">
+            <span class="block-bold">CODE
+                <span class="animation-blink">/</span>
+                LAB:</span>
+                Webbutveckling 1</h1>
+      </header>
+
+      <section class="section">
+        <div class="section__header">
+            <h2>LAB_0: Media queries</h2>
+            <img src="img/check-solid.svg" class="markDone" alt="Mark as done">
+        </div>
+        <div class="section__content">
+            <p>På webbsidan hittar du endast en nav med en enkel text som logotyp och ett par "länkar". Dolt finns även en bild för en "hamburger"-meny. Den syns inte på sidan, men du kan se den i koden</p>
+            <h3>Att göra: </h3>
+            <p>Använd koden och fyll i @media längst ned i style-taggen. Ditt mål är att ta bort länkarna när sidan är mindre än 600px bred och istället visa bilden. Du behöver endast skriva kod innanför <code>@media { }</code></p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section__header">
+            <h2>LAB_1: </h2>
+            <img src="img/check-solid.svg" class="markDone" alt="Mark as done">
+        </div>
+        <div class="section__content">
+            <p>Sidan du ser är byggd för att visa alla rutor på ett särskilt sätt baserat på CSS grid. Koden är dock inte färdig. Med korrekt kod så kommer sidan att få ett unikt useende där alla rutor placeras ut automatiskt</p>
+            <h3>Att göra: </h3>
+            <p>Fyll i <code>body { }</code> så att det blir ett grid-element och sätt kolumner i grid till 12 st där alla har bredden 1fr. Du behöver endast skriva kod i <code>body { }</code>-selektorn</p>
+        </div>
+      </section>
+      
+
+    </main>
+
+    <script>
+        var markDone = document.querySelectorAll('.markDone');
+        var allCards = document.querySelectorAll('.section');
+        var allContent = document.querySelectorAll('.section__content');
+        var getCookiesArr = document.cookie;
+
+        // Går igenom alla __content och länkar klick till motsvarande övning
+        function createLinks() {
+            for(i = 0; i < allContent.length; i++) {
+                let count = i;
+                allContent[count].addEventListener('click', () => {
+                    window.open('./övn' + count + ".html", '_blank')
+                })
+            }
+        }
+
+        // // Funktion för att skapa en cookie
+        // function setCookie(name, value, days) {
+        //     const date = new Date();
+        //     date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); // Dagar till millisekunder
+        //     const expires = "expires=" + date.toUTCString();
+        //     document.cookie = name + "=" + value + ";" + expires + ";path=/";
+        // }
+
+        // function getAllCookies() {
+        //     const cookies = document.cookie.split(';');
+        //     const cookieObj = {};
+        //     cookies.forEach(cookie => {
+        //         const [key, value] = cookie.trim().split('=');
+        //         cookieObj[key] = value;
+        //     });
+        //     return cookieObj;
+        // }
+        // const cookies = getAllCookies();
+
+        // if (cookies['0'] === 'done') {
+        //     console.log("0=done");
+        // }
+
+        // if (cookies['1'] === 'done') {
+        //     console.log("1=done");
+        // }
+
+        function closeCard() {
+            for(i = 0; i < markDone.length; i++) {
+                let cardNo = i
+                markDone[i].addEventListener("click", () => {
+                    markDone[cardNo].src = "img/check-solid-green.svg"
+                    markDone[cardNo].style.border = "3px solid #5be071"
+                    allCards[cardNo].classList.add("hidden")
+
+                    // setCookie(cardNo, "done", 60);
+                })
+            }
+        }
+
+    closeCard()
+    createLinks()
+
+        
+    </script>
+</body>
+</html>

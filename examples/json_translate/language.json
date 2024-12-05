@@ -3,12 +3,16 @@
       "english": {
           "heading": "Welcome to the website",
           "text": "Text på engelska",
-          "test": "Engelska Test"
+          "test": "English Test",
+          "test[0]": "Engelska Test 1",
+          "test[1]": "Engelska Test 2"
       },
       "swedish": {
           "heading": "Välkommen till webbplatsen",
           "text": "Text på svenska",
-          "test": "Svenska Test"
+          "test": "Svenska Test",
+          "test[0]": "Svenska Test 1",
+          "test[1]": "Svenska Test 2"
       }
   }
 }

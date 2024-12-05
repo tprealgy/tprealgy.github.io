@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", serif;
+}
+
+code {
+  background-color: lightgray;
+  padding: 3px;
+  color: black;
+  letter-spacing: 2px;
+}
+
+.animation-blink {
+  animation: blink infinite 5s;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.hidden {
+  outline: 2px solid rgb(85, 230, 85);
+}
+
+.hidden .section__content {
+  animation: hide 2s forwards;
+}
+
+@keyframes hide {
+  0% {
+    height: 100%;
+  }
+  100% {
+    height: 0%;
+    padding: 0;
+  }
+}
+.hidden .section__content p, .hidden .section__content h3 {
+  animation: minText 500ms forwards;
+}
+
+@keyframes minText {
+  0% {
+    font-size: inherit;
+    opacity: 1;
+  }
+  100% {
+    font-size: 0px;
+    opacity: 0;
+  }
+}
+main {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url(img/main_bg.png);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+main > * {
+  margin-block: 2em;
+}
+
+.header {
+  grid-column: 3/-3;
+  border-radius: 1em;
+  padding: 1em;
+  color: #fff;
+  background: #0F7961;
+  background: radial-gradient(at right center, #0F7961 10%, #232323 60%);
+  font-family: "Roboto Slab", serif;
+}
+.header__heading {
+  min-width: -moz-min-content;
+  min-width: min-content;
+  font-weight: normal;
+  letter-spacing: 6px;
+  text-shadow: 3px 3px 3px #232323;
+}
+.header__heading .block-bold {
+  font-weight: bold;
+  display: block;
+}
+
+.section:nth-child(odd) {
+  grid-column: 6/-2;
+}
+
+.section:nth-child(even) {
+  grid-column: 2/-6;
+}
+
+.section {
+  background-image: url("img/section_bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  line-height: 1.6;
+  border-radius: 1em;
+  overflow: hidden;
+}
+.section__header {
+  background: rgba(15, 121, 96, 0.8078431373);
+  padding: 1em;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.section__header h2 {
+  flex: 1 1 0;
+}
+.section__header .markDone {
+  height: 45px;
+  aspect-ratio: 1;
+  max-height: 100%;
+  border: 3px solid #fff;
+  padding: 5px;
+  border-radius: 50%;
+}
+.section__header .markDone:hover {
+  cursor: pointer;
+}
+.section__content {
+  box-shadow: 0 -3px 3px rgba(35, 35, 35, 0.4039215686);
+  background: rgba(15, 121, 96, 0.5019607843);
+  padding: 1em;
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+}/*# sourceMappingURL=style.css.map */
