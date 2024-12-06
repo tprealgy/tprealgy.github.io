@@ -33,7 +33,7 @@
 
       <section class="section">
         <div class="section__header">
-            <h2>LAB_1: </h2>
+            <h2>LAB_1: Kolumner</h2>
             <img src="img/check-solid.svg" class="markDone" alt="Mark as done">
         </div>
         <div class="section__content">
@@ -42,17 +42,28 @@
             <p>Fyll i <code>body { }</code> så att det blir ett grid-element och sätt kolumner i grid till 12 st där alla har bredden 1fr. Du behöver endast skriva kod i <code>body { }</code>-selektorn</p>
         </div>
       </section>
+      <section class="section">
+        <div class="section__header">
+            <h2>LAB_2: Lager på lager</h2>
+            <img src="img/check-solid.svg" class="markDone" alt="Mark as done">
+        </div>
+        <div class="section__content">
+            <p>Du har två bilder att jobba med. De ligger från början ovan och under varandra. Du har också fått en HTML-struktur som du bör bevara. Båda bilderna är från början genomskinliga, det är ensast för att det ska synas om det lyckas. </p>
+            <h3>Att göra: </h3>
+            <p>Använd CSS för att lägga bilderna ovanpå varandra. En av bilderna ska vara bakom den andra. Detta går att åstadkomma med både <code>display: grid</code> och <code>position: absolute</code></p>
+        </div>
+      </section>
       
 
     </main>
 
     <script>
-        var markDone = document.querySelectorAll('.markDone');
-        var allCards = document.querySelectorAll('.section');
-        var allContent = document.querySelectorAll('.section__content');
-        var getCookiesArr = document.cookie;
+        var markDone = document.querySelectorAll('.markDone'); // Hämtar alla checkmarks
+        var allCards = document.querySelectorAll('.section'); // Hämtar alla cards
+        var allContent = document.querySelectorAll('.section__content'); // Hämtar alla sektioner i cards
+        // var getCookiesArr = document.cookie; // Hämtar alla kakor för sidan
 
-        // Går igenom alla __content och länkar klick till motsvarande övning
+        // Går igenom alla __content och länkar klick till motsvarande övning. Vid varje klick på varje checkmark så öppnas en ny flik med filnamnet övn + tillhörande nummer. 
         function createLinks() {
             for(i = 0; i < allContent.length; i++) {
                 let count = i;
@@ -62,7 +73,7 @@
             }
         }
 
-        // // Funktion för att skapa en cookie
+        // // Funktion för att skapa en cookie. Anger namn, värde och sparade dagar. 
         // function setCookie(name, value, days) {
         //     const date = new Date();
         //     date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); // Dagar till millisekunder
@@ -79,6 +90,7 @@
         //     });
         //     return cookieObj;
         // }
+        
         // const cookies = getAllCookies();
 
         // if (cookies['0'] === 'done') {
@@ -104,6 +116,31 @@
 
     closeCard()
     createLinks()
+
+
+
+        var cookieCounterArr = []
+        const cookies = document.cookie.split(';');
+        const cookieObj = {};
+            cookies.forEach(cookie => {
+                removeE = cookie.slice(0, -1)
+                cookieCounterArr.push(removeE)
+            });
+
+        var sectionAmount = allCards.length
+
+        for(test = 0; test < sectionAmount; test++) {
+   
+            cookieCounterArr.forEach((ent) => {
+                if(test == ent) {
+
+                // Test to make sure it works. Change to apply hidden settings with true. 
+                // allCards[Number(ent)].style.display = "none"
+            }
+            }) 
+        }
+        
+
 
         
     </script>

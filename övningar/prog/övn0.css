@@ -1,0 +1,32 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5em
+}
+
+.fadeIn {
+    animation: fadeIn 4s forwards;
+    opacity: 0;
+}
+
+.letterButton {
+    animation: fadeIn 4s forwards;
+    opacity: 0;
+}
+.reverseButton {
+    opacity: 0;
+    
+}
+
+@keyframes fadeIn {
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+    
+}
