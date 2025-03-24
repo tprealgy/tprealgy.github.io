@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="http://koda.nu/simple.js">
+        
+        var floor = {x: 0, y: totalHeight - 50};
+        var stars = [];
+        var dodges = 0;
+
+        function Star() {
+            this.x = random(0, totalWidth - 10);
+            this.y = 0;
+            this.speed = random(1, 5);
+            this.dead = false;
+
+            this.update = function() {
+                var ySpeed = (totalHeight) * this.speed / distance(this, floor);
+                this.y += ySpeed;
+                circle(this.x, this.y, 10, "white");
+            }
+        }
+
+        function Player() {
+            this.x = totalWidth / 2;
+            this.y = totalHeight - 75;
+            this.speed = 0;
+            this.dead = false;
+
+            this.update = function() {
+
+                // circle(this.x, this.y, 20, "red");
+                picture(this.x, this.y, "falling_player.png", 50, 50)
+                if(keyboard.a) {
+                    this.x -= 5;
+                }
+                if(keyboard.d) {
+                    this.x += 5;
+                }
+                
+            }
+        }
+        var player = new Player();
+
+        function update() {
+            fill("black");
+
+            rectangle(floor.x, floor.y, totalWidth, 50, "black");
+            player.update()
+
+            for(var i = 0; i < stars.length; i++) {
+                var star = stars[i];
+                if(star.dead) { continue }
+
+                star.update();
+
+                if(star.y >= totalHeight - 10) {
+                    star.dead = true;
+                    dodges++
+                }
+                if (distance(star, player) < 25) {
+                text(100, 200, 30, "You got snow on your head :(", "yellow");
+                stopUpdate();
+            }
+            }
+
+
+            text(10, 45, 15, "Snow dodged: "+ dodges, "white");
+            if (random(10) == 0) { stars.push(new Star()); }
+        }
+ 
+    </script>
+</body>
+</html>

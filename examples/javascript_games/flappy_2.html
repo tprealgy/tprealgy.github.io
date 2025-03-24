@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="http://koda.nu/simple.js">
+        function Rectangle(x, y, width, height, color, speed) {
+            // Konstruktor som skapar rektangeln som hinder. 
+            this.x = x;
+            this.y = y;
+            this.width = width;
+            this.height = height;
+            this.color = color;
+            this.speed = speed;
+        }
+
+        function Player() {
+            // Konstruktor som skapar spelaren. Spelaren ritas ut i mitten av skärmen på Y-koordinaten och 50px från vänster av skärmen. 
+            this.x = 50;
+            this.y = (totalHeight / 2) - 50;
+            this.s = 50;
+            this.c = "blue";
+
+            this.update = function() {
+                // Funktion inom spelaren som skapar rektangeln för spealaren. Argumenten tittar på koden ovan. 
+                rectangle(this.x, this.y, this.s, this.s, this.c)
+            }
+            this.move = function() {
+                // Funktion som låter spelaren flyttas sig upp och ned med tangentbordet. Steget är 5 vilket ger spelaren en OK hastighet. 
+                if(keyboard.w) {
+                    this.y -= 5
+                }
+                if(keyboard.s) {
+                    this.y += 5
+                }
+            }
+        }
+
+        var drawPlayer = new Player()
+        // Spelarens konstruktor matas in i en variabel så den går att annropa senare i koden. 
+
+        var c = new RoboroCanvas('canvas');
+        // Ändra denna
+        
+        var rectangles = []; 
+        // En array för rektanglarna som skapas längre ned i koden. 
+
+        var lastSpawnTime = 0;
+        // Kolla denna 
+
+        var spawnInterval = c.random(1000, 4000); 
+        // Låter en rektangle skapas mellan 1 och 4 sekunder
+
+c.update = function() {
+    // Här börjar uppdateringskoden 
+
+  c.clearScreen();
+  // Skärmen rensas på innehåll vid varje uppdatering 
+
+  drawPlayer.update()
+  // Spelaren målas ut på skärmen
+  drawPlayer.move()
+  // Spelarens kontroller aktiveras 
+
+  for (var i = 0; i < rectangles.length; i++) {
+      // Loopa igenom rektanglar i arrayen. "i" är en variabel som räknas som +1 efter varje loop. "i" används även i kodstycket. 
+    var rect = rectangles[i];
+    // En variabel skapas för den aktuella rektagneln. Rektagneln hittas med "i"
+
+    c.rectangle(rect.x, rect.y, rect.width, rect.height, rect.color);
+    // Rektangel målas ut med x, y, w, h och färg från de tidigare skapade rektanglarna. 
+    rect.x -= rect.speed;
+    // x-koordinaten ändras med angivven hastighet 
+
+    if (rect.x < -rect.width) {
+        // Ta bort rektanglar som har försvunnit från skärmen om rektangeln når skärmens kant. 
+
+        rectangles.splice(i, 1);
+        //rektangeln plockas bort från array. 
+        i--; 
+    }
+  }
+
+  // Generera nya rektanglar
+  var currentTime = new Date().getTime();
+  // Hämtar tid som en variabel 
+  
+  if (currentTime - lastSpawnTime > spawnInterval) {
+    // Beräkna slumpmässig höjd
+    var randomHeight = c.random(c.height / 4, c.height / 2);
+
+    // Slumpmässig placering upptill eller nedtill
+    var topOrBottom = c.random(2); 
+    var randomY = 0;
+    if (topOrBottom == 0) {
+      // Placera upptill
+      randomY = 0; 
+    } else {
+      // Placera nedtill
+      randomY = c.height - randomHeight; 
+    }
+
+    var newRectangle = new Rectangle(c.width, randomY, 50, randomHeight, "red", c.random(1, 4));
+    rectangles.push(newRectangle);
+    lastSpawnTime = currentTime;
+    spawnInterval = c.random(1000, 4000);
+  }
+};
+    </script>
+</body>
+</html>

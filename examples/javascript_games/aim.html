@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="http://koda.nu/simple.js">
+        var bombArr = [];
+
+        var face = {
+            x: (totalWidth / 2) - 25, 
+            y: (totalHeight / 2) - 25,
+            r: 50
+        }
+
+        function Bomb(x, y, r) {
+            this.x = x;
+            this.y = y;
+            this.r = r;
+            this.s = random(20)
+
+            this.update = function() {
+                circle(this.x, this.y, this.r, "black");
+                if (mouse.x > this.x) {
+                    this.x += 1 * this.s;
+                } else if (mouse.x < this.x) {
+                    this.x -= 1 * this.s;
+                }
+                if (mouse.y > this.y) {
+                    this.y += 1 * this.s;
+                } else if (mouse.y < this.y) {
+                    this.y -= 1 * this.s;
+                }
+            }
+        }
+
+
+        function update() {
+
+            clearScreen();
+            circle(face.x, face.y , face.r, "red");
+
+            for(var i = 0; i < bombArr.length; i++) {
+                var bomb = bombArr[i];
+                bomb.update();
+            }
+
+            setTimeout(function() {
+                if(random(10) == 0) {
+                    bombArr.shift();
+                }
+            }, 5000);
+
+
+
+            if(random(5) == 0) {
+                bombArr.push(new Bomb(face.x, face.y, 20));
+            }
+            // console.log(bombArr.length);
+
+        }
+    </script>
+</body>
+</html>

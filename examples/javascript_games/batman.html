@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="http://koda.nu/simple.js">
+
+        var pic1 = "batman_1.png"
+        var pic2 = "batman_2.png"
+        var pic3 = "batman_3.png"
+        var pic4 = "batman_4.png"
+        var pic5 = "batman_5.png"
+
+
+
+        var batLeg = {
+            endX: 1200,
+            endY: 590, 
+            starX: 1200,
+            starY: 590
+
+        }
+        var joker = {
+            x: 1000, 
+            y: 430
+        }
+
+
+
+ 
+
+        function update() {
+            clearScreen()
+
+            picture(100, 100, pic1)
+            picture(100, 100, pic2)
+            picture(joker.x, joker.y, pic4)
+
+            if(keyboard.f) {
+                picture(500, 30, pic3)
+                pic2 = ""
+                picture(batLeg.starX, batLeg.starY, pic5, 200, 200)
+
+                var hitP = 1200;
+
+
+            } else {
+                pic2 = "batman_2.png"
+                hitP = ""
+            } 
+
+            if(keyboard.f && keyboard.shift) {
+                rotate(8)
+            } else {
+                rotate(0)
+            }
+
+
+
+        }
+
+    </script>
+</body>
+</html>

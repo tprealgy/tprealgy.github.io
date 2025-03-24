@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="http://koda.nu/simple.js">
+        var target = {
+            x: 500,
+            y: 300,
+            r: 10
+        }
+        var points = 0;
+
+        var countdown = 10;
+        setInterval(function() {
+            if (countdown > 0) {
+                countdown--;
+            }
+        }, 1000);
+
+
+        function update() {
+            clearScreen();
+            circle(target.x, target.y, target.r, "red");
+            text(10, 100, 100, points, "black",)
+            text(10, 210, 80, countdown, "black",)
+
+            if(mouse.x > target.x - target.r && mouse.x < target.x + target.r && mouse.y > target.y - target.r && mouse.y < target.y + target.r && mouse.left) {
+                target.x = Math.random() * 1000;
+                target.y = Math.random() * 600;
+                points++;
+            }
+            if(countdown == 0) {
+                stopUpdate()
+                alert("Game over! You got " + points + " points!")
+            }
+        }
+    </script>
+</body>
+</html>

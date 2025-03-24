@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="http://koda.nu/simple.js">
+
+        function Background() {
+            var horizon = 100
+            
+
+            this.update = function() {
+                rectangle(0, 0, totalWidth, totalHeight - horizon, "lightblue")
+                rectangle(0, totalHeight - horizon, totalWidth, horizon, "lightgreen")
+            }
+
+        }
+
+        function Player() {
+            var playerSize = 50
+            var playerY = totalHeight - 125
+
+            var s = 0;
+            var s0 = totalHeight / 2;
+            var g = -9.8;
+            var v0 = 0;
+            var t = 0;
+
+
+            this.x = 100;
+            this.y = playerY;
+
+
+            this.update = function() {
+                // t += 0.2;
+                // s = v0 * t + (g * t * t) / 2;
+                // this.y = totalHeight - (s + s0)
+                // if(keyboard.space) {
+                //     this.y = this.y * 0.8
+                // }
+
+                // if(this.y >= totalHeight - 125) {
+                // }
+
+     
+
+                rectangle(this.x, this.y, playerSize, playerSize , "red");
+
+            }
+            this.move = function() {
+                if(keyboard.d) {
+                    this.x += 5
+                }
+                if(keyboard.a) {
+                    this.x -= 5
+                }
+
+                if(keyboard.space) {
+                    this.y -= 80; 
+                    // this.y--
+                }
+            }
+
+        }
+
+        function Enemy() {
+            this.x = totalWidth - 25;
+            this.y = totalHeight - 125
+            this.speed = 10
+
+            this.update = function() {
+                circle(this.x, this.y, 25, "green")
+
+                this.x -= this.speed
+
+                if (this.x < 25) { 
+                    this.speed = -this.speed;
+                 }
+                if (this.x > totalWidth - 25) { 
+                    this.speed = -this.speed;
+                 }
+
+            }
+        }
+
+        var background = new Background()
+        var player = new Player()
+        var enemy = new Enemy()
+
+        function update() {
+            background.update()
+            player.update()
+            player.move()
+            enemy.update()
+
+            if(player.y + 50 == enemy.y && player.x < enemy.x) {
+                // console.log("hit")
+            }
+
+            if(enemy.x == player.x + 50) {
+                console.log("hit")
+            }
+        }
+
+      
+
+
+    </script>
+</body>
+</html>

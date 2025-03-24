@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            /* background-image: url("background_bg1.jpg"); */
+        }
+        #canvas {
+        }
+    </style>
+</head>
+<body>
+    <script src="http://koda.nu/simple.js">
+        var area = document.querySelector('#canvas')
+        var x = 1
+        var bgS = totalWidth
+        var bgX = 0
+
+        function backgrounds() {
+
+            var bgImg = ["background_bg1.jpg", "background_bg2.jpg", "background_bg3.jpg"]
+            picture((bgX * 0), 0, "background_bg1.jpg", bgS, totalHeight)
+            picture(bgS + (bgX * 1), 0, "background_bg2.jpg", bgS, totalHeight)
+            picture(bgS + (bgX * 2), 0, "background_bg3.jpg", bgS, totalHeight)
+        }
+
+        var bgScroll = 5120 / 2
+        var x = totalWidth / 2
+
+        function backgroundScroll() {
+            picture(-bgScroll,0, "background_bg4.jpg", 5120, totalHeight)
+        }
+
+
+        function update() {
+            clearScreen()
+
+            // backgrounds()
+            backgroundScroll()
+
+            rectangle(x, 600, 50, 50, "black")
+
+            if(keyboard.d) {
+                x += totalWidth / 100
+                bgX -= 50
+                bgScroll -= 20
+            }
+            if(keyboard.a) {
+                x -= totalWidth / 100
+                bgX += 50
+                bgScroll += 20
+            }
+            if(x < 0) {
+                x =  1
+
+            }
+            if(x >= totalWidth - 51) {
+                x =  totalWidth - 51
+
+            }
+
+        }
+
+
+
+    </script>
+</body>
+</html>

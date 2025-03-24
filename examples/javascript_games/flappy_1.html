@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://koda.nu/simple.js">
+
+        function Pillars(x, y, w, h, c, s) {
+            // Konstruktor som skapar pelare som hinder för spelaren 
+            
+            this.x          = x;
+            this.y          = y;
+            this.width      = w;
+            this.height     = h;
+            this.color      = c;
+            this.speed      = s;
+        }
+
+        function Player() {
+            // Konstruktor för spelaren som börjar till vänster och mitten av skärmen. 
+            this.x          = 50;
+            this.y          = (totalHeight / 2) - 50;
+            this.s          = 50;
+            this.c          = "blue"
+
+            this.update = function() {
+                // Formen för spelaren. Hämtar argument från ovan. 
+                rectangle(this.x, this.y, this.s, this.s, this.c)
+            }
+            this.move = function() {
+                // Kontroll över spelaren med W och S. 
+                if(keyboard.w) {
+                    this.y -= 5;
+                }
+                if(keyboard.s) {
+                    this.y += 5;
+                }
+
+            }
+        }
+
+        var drawPlayer = new Player()
+        // Hämtar Player() till en variabel för använding senare. 
+
+        var pillarsArray = []
+        // Skapar en array för att lagra pelare i. 
+
+        var lastSpawnTime = 0
+        // Variabel för att hålla koll på spawn av pelare seanre. 
+
+        var spawnInterval = random(1000, 4000)
+        // Intervall för när pelare ska skapas
+
+        function update() {
+            clearScreen()
+
+            // Spelaren målas ut med update() och får sina rördelsefuntkioner med move()
+            drawPlayer.update()
+            drawPlayer.move()
+
+            for (var i = 0; i < pillarsArray.length; i++) {
+                // Kollar listan pillarsArray och utför kod för hur lång listan än är. 
+                
+                var pillar = pillarsArray[i];
+                // Hämtar nuvarande pelare i listan med variabeln i. Enskild pelare heter "pillar"
+
+                rectangle(pillar.x, pillar.y, pillar.width, pillar.height, pillar.color)
+                // Rektangel målas ut för varje pelare i listan. Detta är pelarna som syns på skärmen. 
+
+                pillar.x -= pillar.speed
+                // Pelarens x-koordinat minskar med satta hastigheten. 
+
+                if (pillar.x < -pillar.width) {
+                    // Om pelaren lämnar skärmen på vänstra sidan... 
+
+                    pillarsArray.splice(i, 1)
+                    // Ta bort pelaren... 
+
+                    i--
+                    // Minska i med 1
+                }
+            }
+
+            var currentTime = new Date().getTime();
+            // Hämtar nuvarande tid, baserat på dagens datum. 
+
+            if(currentTime - lastSpawnTime > spawnInterval) {
+                // Om, baserat på tid och spawn 
+
+                var randomHeight = random(totalHeight / 4, totalHeight /2)
+                // Pelarna kan ha olika höjder. Mellan hälften av skärmen och 1/4. 
+
+                var topOrBottom = random(2)
+                // Pelaren kan finnas på antingen toppen eller botten av skärmen. Ett av två lägen. 
+
+                var randomY = 0
+                // 
+
+                if(topOrBottom == 0) {
+                    randomY = 0;
+                } else {
+                    randomY = totalHeight - randomHeight;
+                }
+
+                var newPillar = new Pillars(totalWidth, randomY, 5, randomHeight, "yellow", random(1, 4))
+                pillarsArray.push(newPillar)
+                lastSpawnTime = currentTime;
+                spawnInterval = random(1000, 4000)
+            }
+        }
+    </script>
+</body>
+</html>
