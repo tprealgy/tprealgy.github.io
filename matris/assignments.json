@@ -1,0 +1,13 @@
+[
+  {
+    "name": "jjjj",
+    "connectedValues": [
+      "efg"
+    ],
+    "locked": false,
+    "cellColors": {
+      "C": "green",
+      "A": "yellow"
+    }
+  }
+]
