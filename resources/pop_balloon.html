@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="http://koda.nu/simple.js">
+        var balloon = "balloon.png"
+        var balloonPopped = "balloon_popped.jpg"
+        var crosshair = "crosshair.png"
+
+        var randomX = random(0, totalWidth)
+        var randomY = random(0, totalHeight)
+        var xRiktning = 5;
+        var yRiktning = 5;
+
+        hideMouse()
+            function update() {
+            picture(randomX, randomY, balloon, 50, 50)
+            picture(mouse.x, mouse.y, crosshair, 50, 50)
+
+            randomX += xRiktning;
+            randomY += yRiktning;
+            if (randomX < 50) {
+                xRiktning = 1;
+                //for att cirkeln inte ska fastna
+                randomX++;
+            } else if (randomY < 50) {
+                yRiktning = 1;
+                //for att cirkeln inte ska fastna
+                randomY++;
+            } else if (randomX > totalWidth - 50) {
+                xRiktning = -1;
+                //for att cirkeln inte ska fastna
+                randomX--;
+            } else if (randomY > totalHeight - 50) {
+                yRiktning = -1;
+                //for att cirkeln inte ska fastna
+                randomY--;
+            }
+        }
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
